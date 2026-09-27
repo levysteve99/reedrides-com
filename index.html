@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Reed Rides: Your Theme Park Passport</title>
-<meta name="description" content="Track every coaster you've ridden, earn badges, and ride with your crew. Reed Rides is the theme park passport app, coming soon to iOS and Android.">
-<meta name="theme-color" content="#BE302C">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Reed Rides: Your Theme Park Passport, Now With Ask Reed</title>
+<meta name="description" content="Verified check-ins for every coaster you ride, badges, crew leaderboards, live wait times, and Ask Reed, an assistant that knows your ride history. Coming soon to iOS and Android.">
+<meta name="theme-color" content="#E8C93E">
 <link rel="canonical" href="https://www.reedrides.com/">
 <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
 <link rel="icon" type="image/png" sizes="192x192" href="images/favicon-192.png">
@@ -14,773 +14,442 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.reedrides.com/">
 <meta property="og:site_name" content="Reed Rides">
-<meta property="og:title" content="Reed Rides: Your Theme Park Passport">
-<meta property="og:description" content="Track every coaster you've ridden, earn badges, and ride with your crew. Coming soon to iOS and Android.">
+<meta property="og:title" content="Reed Rides: Your rides, on the record. Now ask them anything.">
+<meta property="og:description" content="The theme park passport with verified check-ins, crew leaderboards, live wait times and Ask Reed. Coming soon to iOS and Android.">
 <meta property="og:image" content="https://www.reedrides.com/images/og-image.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Reed Rides: Your Theme Park Passport">
-<meta name="twitter:description" content="Track every coaster you've ridden, earn badges, and ride with your crew. Coming soon to iOS and Android.">
+<meta name="twitter:title" content="Reed Rides: Your rides, on the record. Now ask them anything.">
+<meta name="twitter:description" content="The theme park passport with verified check-ins, crew leaderboards, live wait times and Ask Reed. Coming soon to iOS and Android.">
 <meta name="twitter:image" content="https://www.reedrides.com/images/og-image.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap">
 <style>
-  :root{
-    --brand:#BE302C;
-    --brand-dark:#761E1B;
-    --gold:#C89B3C;
-    --gold-light:#E9CF9A;
-    --ink:#211A17;
-    --ink-soft:#6B5F58;
-    --paper:#FBF7F1;
-    --paper-dim:#F3ECE1;
-    --card:#FFFFFF;
-    --line:rgba(33,26,23,0.10);
-    --radius:18px;
-    --shadow: 0 20px 45px -22px rgba(33,26,23,0.35);
+:root{
+  --sun:#E8C93E; --sun-deep:#B89A1E; --red:#D8342A; --red-deep:#A1241C;
+  --ink:#1C1C1E; --ink-soft:#4B473D; --gold-ink:#7A6212;
+  --paper:#FFFFFF; --paper-2:#FBF5DD; --card:#FFFFFF; --line:#E9E0BF;
+  --on-sun:#1C1C1E; --shadow:0 18px 50px -24px rgba(60,45,0,.45);
+  --display:"Bricolage Grotesque", "Arial Black", system-ui, sans-serif;
+  --body:"Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono:"JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --ink:#F4F0E4; --ink-soft:#BDB5A0; --gold-ink:#E8C93E;
+    --paper:#131210; --paper-2:#1C1A15; --card:#211F19; --line:#35312A;
+    --shadow:0 18px 50px -24px rgba(0,0,0,.8);
   }
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{
-    margin:0;
-    background:var(--paper);
-    color:var(--ink);
-    font-family:'Inter',system-ui,-apple-system,sans-serif;
-    line-height:1.55;
-    -webkit-font-smoothing:antialiased;
-  }
-  h1,h2,h3,.display{
-    font-family:'Fraunces',Georgia,serif;
-    font-weight:600;
-    letter-spacing:-0.01em;
-    margin:0;
-    color:var(--ink);
-  }
-  a{color:inherit;}
-  img{max-width:100%;display:block;}
-  .wrap{max-width:1160px;margin:0 auto;padding:0 24px;}
-  .eyebrow{
-    display:inline-flex;align-items:center;gap:8px;
-    font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;
-    color:var(--brand);
-    background:rgba(190,48,44,0.08);
-    padding:6px 14px;border-radius:999px;
-    margin-bottom:18px;
-  }
-  .eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--brand);}
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --ink:#F4F0E4; --ink-soft:#BDB5A0; --gold-ink:#E8C93E;
+  --paper:#131210; --paper-2:#1C1A15; --card:#211F19; --line:#35312A;
+  --shadow:0 18px 50px -24px rgba(0,0,0,.8);
+}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1160px;margin:0 auto;padding-inline:20px}
+h1,h2,h3{font-family:var(--display);line-height:1.02;letter-spacing:-.02em;text-wrap:balance;margin:0}
+p{margin:0}
+.eyebrow{font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-ink)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font:700 16px/1 var(--body);border:0;border-radius:999px;padding:15px 24px;cursor:pointer;text-decoration:none;transition:transform .15s ease}
+.btn:hover{transform:translateY(-1px)}
+.btn:focus-visible,input:focus-visible,summary:focus-visible,a:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+.btn-red{background:var(--red);color:#fff}
+.btn-ink{background:var(--ink);color:var(--paper)}
 
-  /* NAV */
-  header.site-nav{
-    position:sticky;top:0;z-index:50;
-    background:rgba(251,247,241,0.88);
-    backdrop-filter:blur(10px);
-    border-bottom:1px solid var(--line);
-  }
-  .nav-inner{
-    display:flex;align-items:center;justify-content:space-between;
-    padding:14px 24px;max-width:1160px;margin:0 auto;
-  }
-  .brand-mark{display:flex;align-items:center;gap:10px;text-decoration:none;}
-  .brand-mark img{height:40px;width:auto;}
-  .nav-links{display:flex;align-items:center;gap:30px;list-style:none;margin:0;padding:0;}
-  .nav-links a{
-    text-decoration:none;color:var(--ink);font-weight:600;font-size:14.5px;
-    opacity:0.82;transition:opacity .15s;
-  }
-  .nav-links a:hover{opacity:1;}
-  .btn{
-    display:inline-flex;align-items:center;justify-content:center;gap:8px;
-    font-weight:700;font-size:14.5px;text-decoration:none;
-    padding:11px 22px;border-radius:999px;border:1px solid transparent;
-    cursor:pointer;transition:transform .15s ease, box-shadow .15s ease;
-  }
-  .btn:hover{transform:translateY(-1px);}
-  .btn-primary{background:var(--brand);color:#fff;box-shadow:0 10px 22px -10px rgba(190,48,44,0.55);}
-  .btn-primary:hover{background:var(--brand-dark);}
-  .btn-ghost{background:transparent;border-color:var(--line);color:var(--ink);}
-  .nav-cta{display:flex;align-items:center;gap:14px;}
-  .nav-toggle{display:none;background:none;border:none;font-size:26px;cursor:pointer;color:var(--ink);}
-  .nav-links.mobile-open{
-    display:flex !important;flex-direction:column;align-items:flex-start;gap:16px;
-    position:absolute;top:100%;left:0;right:0;background:var(--paper);
-    padding:22px 24px 26px;border-bottom:1px solid var(--line);box-shadow:var(--shadow);
-  }
+/* NAV */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;gap:24px;height:64px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font:800 20px/1 var(--display)}
+.brand img{height:34px;width:auto}
+.nav nav{display:flex;gap:22px;margin-left:auto;font-weight:600;font-size:15px}
+.nav nav a{text-decoration:none;color:var(--ink-soft)}
+.nav nav a:hover{color:var(--ink)}
+.nav .btn{padding:11px 18px;font-size:14px}
+@media (max-width:820px){.nav nav{display:none}.nav .btn{margin-left:auto}}
 
-  /* HERO */
-  .hero{padding:76px 0 40px;}
-  .hero-grid{
-    display:grid;grid-template-columns:1.05fr 0.95fr;gap:56px;align-items:center;
-  }
-  .hero h1{font-size:clamp(34px,4.6vw,54px);line-height:1.06;}
-  .hero h1 em{font-style:normal;color:var(--brand);}
-  .hero p.lead{
-    font-size:18px;color:var(--ink-soft);max-width:480px;margin:20px 0 30px;
-  }
-  .notify-cta{display:flex;gap:18px;flex-wrap:wrap;align-items:center;margin-bottom:14px;}
-  .btn-large{padding:16px 30px;font-size:16px;}
-  .platform-note{font-size:13.5px;font-weight:600;color:var(--ink-soft);}
+/* HERO */
+.hero{background:var(--sun);color:var(--on-sun);position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:
+  radial-gradient(1200px 500px at 85% -10%,rgba(255,255,255,.35),transparent 60%),
+  repeating-linear-gradient(135deg,transparent 0 38px,rgba(0,0,0,.035) 38px 39px)}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;padding-block:64px 72px}
+@media (max-width:900px){.hero .wrap{grid-template-columns:1fr;padding-block:40px 56px}}
+.hero .eyebrow{color:#5C4A0C}
+.hero h1{font-size:clamp(46px,7vw,88px);font-weight:800;margin:14px 0 20px}
+.hero h1 em{font-style:normal;color:var(--red-deep);position:relative;white-space:nowrap}
+.hero .lede{font-size:clamp(18px,2vw,21px);max-width:34em;color:#2B2716}
+.notify{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px;max-width:520px}
+.notify input{flex:1 1 220px;min-width:0;font:500 16px var(--body);padding:15px 18px;border-radius:999px;border:2px solid var(--ink);background:#fff;color:#1C1C1E}
+.fine{font-size:14px;margin-top:12px;color:#4A3F17}
+.hp-field{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.notify.hide,.fine.hide{display:none}
+.notify-error,.notify-success{display:none;font-size:15px;font-weight:700;margin-top:12px}
+.notify-error.show,.notify-success.show{display:block}
+.notify-error{color:var(--red-deep)}
+.cta .notify-error{color:#fff}
 
-  .notify-form{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px;}
-  .notify-form input[type="email"]{
-    flex:1 1 240px;min-width:0;padding:14px 18px;font-size:15px;font-family:'Inter',sans-serif;
-    border:1px solid var(--line);border-radius:999px;background:var(--card);color:var(--ink);
-  }
-  .notify-form input[type="email"]:focus{outline:2px solid var(--brand);outline-offset:1px;}
-  .notify-form .hp-field{position:absolute;left:-9999px;}
-  .notify-success{
-    display:none;align-items:center;gap:10px;font-weight:700;color:var(--brand);
-    background:rgba(190,48,44,0.08);padding:14px 20px;border-radius:999px;margin-bottom:14px;
-  }
-  .notify-success.show{display:inline-flex;}
-  .notify-form.hide, .platform-note.hide{display:none;}
-  .notify-error{color:var(--brand);font-size:13px;margin:-8px 0 14px;display:none;}
-  .notify-error.show{display:block;}
-  .cta-section .notify-form input[type="email"]{background:rgba(255,255,255,0.95);border-color:transparent;}
-  .cta-section .notify-success{background:rgba(255,255,255,0.18);color:#fff;}
-  .hero-note{font-size:13.5px;color:var(--ink-soft);}
-  .hero-note strong{color:var(--ink);}
+/* Phone + chat */
+.phone{justify-self:center;width:min(360px,100%);background:#141312;border-radius:44px;padding:12px;box-shadow:0 40px 80px -30px rgba(40,25,0,.55),inset 0 0 0 2px #2c2a25}
+.screen{background:#F6F2E6;border-radius:34px;overflow:hidden;color:#1C1C1E}
+.chat-top{display:flex;align-items:center;gap:10px;padding:18px 18px 12px;border-bottom:1px solid #E6DFC7;background:#fff}
+.chat-top .av{width:34px;height:34px;border-radius:50%;background:var(--sun);display:grid;place-items:center;font:800 15px var(--display)}
+.chat-top b{font-family:var(--display);font-size:17px}
+.chat-top small{display:block;font-size:12px;color:#6B6452;line-height:1.2}
+.chat{display:flex;flex-direction:column;gap:10px;padding:16px 14px 18px;font-size:14.5px;line-height:1.45}
+.bubble{max-width:86%;padding:10px 13px;border-radius:18px}
+.me{align-self:flex-end;background:#E8C93E;color:#1C1C1E;border-bottom-right-radius:6px}
+.reed{align-self:flex-start;background:#fff;border:1px solid #E6DFC7;border-bottom-left-radius:6px}
+.reed b{font-weight:700}
+.blist{margin:6px 0 6px;padding-left:18px}
+.blist li{margin:2px 0}
+.chips{display:flex;gap:6px;flex-wrap:wrap;padding:0 14px 16px}
+.chips span{font-size:12px;font-weight:600;border:1px solid #D9CFA8;background:#fff;border-radius:999px;padding:6px 10px}
+.pending{font-family:var(--mono);font-size:12px;color:#7A6212;background:#FFF6CC;border:1px dashed #B89A1E;border-radius:10px;padding:10px}
 
-  /* Phone mockup */
-  .phone-stage{position:relative;display:flex;justify-content:center;}
-  .phone-frame{
-    width:290px;height:596px;background:#141110;border-radius:44px;
-    padding:14px;box-shadow:0 40px 70px -30px rgba(33,26,23,0.55);
-    position:relative;z-index:2;
-  }
-  .phone-notch{
-    position:absolute;top:14px;left:50%;transform:translateX(-50%);
-    width:110px;height:22px;background:#141110;border-radius:0 0 16px 16px;z-index:3;
-  }
-  .phone-screen{
-    width:100%;height:100%;border-radius:32px;overflow:hidden;position:relative;
-    background:linear-gradient(160deg,var(--brand) 0%,var(--brand-dark) 55%,#3a1210 100%);
-    display:flex;align-items:center;justify-content:center;
-  }
-  /* REAL SCREENS gallery */
-  .screens-row{display:flex;gap:26px;overflow-x:auto;padding:14px 4px 30px;scroll-snap-type:x proximity;}
-  .screen-item{scroll-snap-align:start;text-align:center;flex:0 0 auto;width:220px;}
-  .mini-phone{
-    width:220px;height:452px;background:#141110;border-radius:32px;padding:10px;
-    box-shadow:var(--shadow);position:relative;
-  }
-  .mini-phone .mini-notch{
-    position:absolute;top:10px;left:50%;transform:translateX(-50%);
-    width:80px;height:16px;background:#141110;border-radius:0 0 12px 12px;z-index:2;
-  }
-  .mini-phone img{width:100%;height:100%;object-fit:cover;border-radius:24px;display:block;}
-  .screen-item .cap{margin-top:16px;font-weight:700;font-size:15px;}
-  .screen-item .cap-sub{font-size:12.5px;color:var(--ink-soft);margin-top:3px;}
-  .real-tag{
-    position:absolute;top:14px;left:14px;z-index:5;background:rgba(20,17,16,0.82);color:#fff;
-    font-size:10.5px;font-weight:800;letter-spacing:0.05em;text-transform:uppercase;
-    padding:5px 11px;border-radius:999px;
-  }
+/* ticker */
+.ticker{background:var(--ink);color:var(--sun);overflow:hidden;border-block:3px solid var(--red)}
+.ticker .track{display:flex;gap:48px;white-space:nowrap;padding:14px 0;font:700 14px var(--mono);letter-spacing:.06em;animation:roll 60s linear infinite;width:max-content}
+.ticker span{opacity:.95}
+.ticker i{font-style:normal;color:#fff;opacity:.55}
+@keyframes roll{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.ticker .track{animation:none}}
 
-  .float-card{
-    position:absolute;background:var(--card);border-radius:16px;padding:12px 16px;
-    box-shadow:var(--shadow);display:flex;align-items:center;gap:10px;z-index:4;
-    font-size:13px;font-weight:700;
-  }
-  .float-card .fc-icon{
-    width:34px;height:34px;border-radius:10px;display:flex;align-items:center;justify-content:center;
-    font-size:17px;flex-shrink:0;
-  }
-  .fc-1{top:8%;left:-6%;}
-  .fc-1 .fc-icon{background:var(--gold-light);}
-  .fc-2{bottom:12%;right:-8%;}
-  .fc-2 .fc-icon{background:rgba(190,48,44,0.12);}
-  .fc-sub{display:block;font-weight:500;color:var(--ink-soft);font-size:11.5px;}
+section{padding-block:88px}
+.sec-head{max-width:720px;margin-bottom:40px;display:grid;gap:14px}
+.sec-head h2{font-size:clamp(34px,4.6vw,56px);font-weight:800}
+.sec-head p{font-size:19px;color:var(--ink-soft)}
 
-  /* STATS BAR */
-  .stats-bar{
-    background:var(--ink);color:#fff;padding:34px 0;
-  }
-  .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;text-align:center;}
-  .stats-grid .num{font-family:'Fraunces';font-size:clamp(24px,3vw,34px);color:var(--gold);}
-  .stats-grid .label{font-size:12.5px;color:rgba(255,255,255,0.65);text-transform:uppercase;letter-spacing:0.06em;margin-top:4px;}
+/* Ask Reed section */
+.ask{background:var(--paper-2)}
+.ask-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+@media (max-width:880px){.ask-grid{grid-template-columns:1fr}}
+.qlist{display:grid;gap:12px;align-content:start}
+.q{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:start;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px 18px}
+.q .n{font:700 12px var(--mono);color:var(--paper);background:var(--ink);border-radius:8px;padding:5px 7px;margin-top:2px}
+.q b{display:block;font-family:var(--display);font-size:19px;line-height:1.2;margin-bottom:4px}
+.q p{color:var(--ink-soft);font-size:15.5px}
+.trust{background:var(--ink);color:#F4F0E4;border-radius:24px;padding:28px;display:grid;gap:18px;align-content:start}
+.trust h3{font-size:28px;color:var(--sun)}
+.trust ul{list-style:none;margin:0;padding:0;display:grid;gap:14px}
+.trust li{display:grid;grid-template-columns:22px 1fr;gap:10px;font-size:15.5px;color:#DDD6C3}
+.trust li::before{content:"";width:12px;height:12px;border-radius:3px;background:var(--sun);margin-top:6px}
+.trust li b{color:#fff}
 
-  /* SECTIONS */
-  section{padding:88px 0;}
-  .section-head{max-width:620px;margin:0 auto 52px;text-align:center;}
-  .section-head h2{font-size:clamp(28px,3.4vw,40px);}
-  .section-head p{color:var(--ink-soft);font-size:16.5px;margin-top:14px;}
+/* screens */
+.screens{display:flex;gap:22px;overflow-x:auto;padding-bottom:18px;scroll-snap-type:x mandatory}
+.screens figure{margin:0;flex:0 0 232px;scroll-snap-align:start}
+.screens img{display:block;width:100%;border-radius:28px;border:8px solid #141312;box-shadow:var(--shadow);background:#141312}
+.screens figcaption{margin-top:14px}
+.screens figcaption b{display:block;font-family:var(--display);font-size:18px}
+.screens figcaption span{font-size:14.5px;color:var(--ink-soft)}
 
-  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
-  .step-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:28px 22px;}
-  .step-num{
-    width:36px;height:36px;border-radius:10px;background:var(--brand);color:#fff;
-    display:flex;align-items:center;justify-content:center;font-weight:800;font-family:'Fraunces';
-    margin-bottom:18px;
-  }
-  .step-card h3{font-size:18px;margin-bottom:8px;}
-  .step-card p{font-size:14.5px;color:var(--ink-soft);margin:0;}
+/* features */
+.feat{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media (max-width:900px){.feat{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.feat{grid-template-columns:1fr}}
+.f{border-top:3px solid var(--ink);padding-top:18px;display:grid;gap:8px;align-content:start}
+.f .tag{font:700 11px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--red)}
+.f h3{font-size:24px;font-weight:700}
+.f p{color:var(--ink-soft);font-size:16px}
+.f .stat{font:700 13px var(--mono);color:var(--gold-ink);letter-spacing:.04em}
 
-  .feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
-  .feature-card{
-    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
-    padding:30px 26px;box-shadow:0 1px 0 rgba(33,26,23,0.02);
-  }
-  .feature-icon{
-    width:46px;height:46px;border-radius:13px;display:flex;align-items:center;justify-content:center;
-    font-size:22px;margin-bottom:18px;background:rgba(190,48,44,0.08);
-  }
-  .feature-card h3{font-size:18.5px;margin-bottom:10px;}
-  .feature-card p{font-size:14.5px;color:var(--ink-soft);margin:0;}
+/* spotlight rows */
+.spot{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:center}
+.spot.flip{grid-template-columns:1.2fr .8fr}
+.spot.flip .shot{order:2}
+@media (max-width:880px){.spot,.spot.flip{grid-template-columns:1fr;gap:32px}.spot.flip .shot{order:0}}
+.shot{justify-self:center;width:min(300px,100%)}
+.shot img{display:block;width:100%;border-radius:34px;border:10px solid #141312;box-shadow:var(--shadow)}
+.spot h2{font-size:clamp(32px,4vw,50px);font-weight:800;margin:12px 0 16px}
+.spot .copy>p{font-size:18px;color:var(--ink-soft);max-width:32em}
+.checks{list-style:none;padding:0;margin:22px 0 0;display:grid;gap:12px}
+.checks li{display:grid;grid-template-columns:26px 1fr;gap:10px;font-size:16px}
+.checks li::before{content:"✓";display:grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--red);color:#fff;font-size:12px;font-weight:800;margin-top:2px}
+.checks b{font-weight:700}
+.crew{background:var(--paper-2)}
+.attrib{font-size:13px;color:var(--ink-soft);margin-top:14px}
 
-  /* CREW SPOTLIGHT */
-  .crew-section{background:var(--paper-dim);}
-  .crew-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
-  .crew-copy .eyebrow{background:rgba(200,155,60,0.16);color:#7a5a12;}
-  .crew-copy .eyebrow .dot{background:var(--gold);}
-  .crew-copy h2{font-size:clamp(26px,3.2vw,36px);margin-bottom:16px;}
-  .crew-copy p.lead{color:var(--ink-soft);font-size:16px;max-width:460px;}
-  .crew-list{list-style:none;margin:26px 0 0;padding:0;display:grid;gap:14px;}
-  .crew-list li{display:flex;gap:12px;align-items:flex-start;font-size:15px;}
-  .crew-list .check{
-    width:22px;height:22px;border-radius:50%;background:var(--brand);color:#fff;
-    display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0;margin-top:2px;
-  }
-  .crew-visual{
-    background:var(--card);border-radius:24px;padding:26px;box-shadow:var(--shadow);
-  }
-  .crew-visual-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;}
-  .crew-visual-header strong{font-family:'Fraunces';font-size:17px;}
-  .crew-row{
-    display:flex;align-items:center;gap:12px;padding:12px 0;border-top:1px solid var(--line);
-  }
-  .crew-row:first-of-type{border-top:none;}
-  .avatar{
-    width:38px;height:38px;border-radius:50%;background:var(--brand);color:#fff;
-    display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;flex-shrink:0;
-  }
-  .crew-row .who{font-weight:700;font-size:14.5px;}
-  .crew-row .what{font-size:12.5px;color:var(--ink-soft);}
-  .crew-row .badge-pill{
-    margin-left:auto;background:var(--gold-light);color:#5c460f;font-size:11.5px;font-weight:700;
-    padding:4px 10px;border-radius:999px;white-space:nowrap;
-  }
+/* numbers */
+.nums{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:2px solid var(--ink);border-radius:22px;overflow:hidden;background:var(--card)}
+.nums div{padding:24px;border-right:2px solid var(--ink)}
+.nums div:last-child{border-right:0}
+.nums b{display:block;font:800 clamp(34px,4vw,48px)/1 var(--display);font-variant-numeric:tabular-nums}
+.nums span{font:700 11px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft)}
+@media (max-width:720px){.nums{grid-template-columns:repeat(2,1fr)}.nums div:nth-child(2){border-right:0}.nums div:nth-child(-n+2){border-bottom:2px solid var(--ink)}}
 
-  /* BADGES / COVERAGE */
-  .badge-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;margin-top:8px;}
-  .badge-tile{
-    background:var(--card);border:1px solid var(--line);border-radius:14px;
-    padding:18px 10px;text-align:center;
-  }
-  .badge-tile .b-icon{font-size:24px;margin-bottom:8px;}
-  .badge-tile .b-name{font-size:12.5px;font-weight:700;}
-  .badge-tile .b-sub{font-size:11px;color:var(--ink-soft);margin-top:2px;}
+/* CTA */
+.cta{background:var(--red);color:#fff;border-radius:32px;padding:56px 40px;display:grid;grid-template-columns:auto 1fr;gap:36px;align-items:center}
+.cta img{width:120px;height:auto;background:#fff;border-radius:50%;padding:12px}
+.cta h2{font-size:clamp(32px,4vw,52px);font-weight:800}
+.cta p{font-size:18px;margin-top:10px;color:#FFE9E6}
+.cta .notify input{border-color:#fff}
+.cta .btn-ink{background:#1C1C1E;color:#fff}
 
-  /* CTA */
-  .cta-section{
-    background:linear-gradient(135deg,var(--brand) 0%,var(--brand-dark) 100%);
-    color:#fff;border-radius:28px;margin:0 24px;padding:64px 40px;text-align:center;
-  }
-  .cta-inner{max-width:640px;margin:0 auto;}
-  .cta-section h2{color:#fff;font-size:clamp(26px,3.4vw,38px);}
-  .cta-section p{color:rgba(255,255,255,0.82);margin:16px 0 30px;font-size:16px;}
-  .cta-section .notify-cta{justify-content:center;}
-  .cta-section .platform-note{color:rgba(255,255,255,0.75);}
-  .cta-section .btn-primary{background:#fff;color:var(--brand-dark);box-shadow:0 10px 22px -10px rgba(0,0,0,0.35);}
-  .cta-section .btn-primary:hover{background:var(--gold-light);}
+@media (max-width:720px){.cta{grid-template-columns:1fr;padding:40px 24px}}
 
-  /* FAQ */
-  .faq-list{max-width:760px;margin:0 auto;display:grid;gap:12px;}
-  @media (min-width:860px){
-    .faq-list{max-width:1020px;grid-template-columns:1fr 1fr;align-items:start;}
-  }
-  .faq-item{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;}
-  .faq-q{
-    display:flex;align-items:center;justify-content:space-between;gap:16px;
-    padding:18px 22px;cursor:pointer;font-weight:700;font-size:15.5px;
-  }
-  .faq-q .chev{transition:transform .2s ease;color:var(--brand);font-size:18px;flex-shrink:0;}
-  .faq-item.open .chev{transform:rotate(45deg);}
-  .faq-a{max-height:0;overflow:hidden;transition:max-height .25s ease;padding:0 22px;}
-  .faq-item.open .faq-a{max-height:220px;padding-bottom:20px;}
-  .faq-a p{margin:0;color:var(--ink-soft);font-size:14.5px;}
+/* FAQ */
+.faq{display:grid;grid-template-columns:1fr 1fr;gap:12px 28px}
+@media (max-width:820px){.faq{grid-template-columns:1fr}}
+details{border-bottom:1px solid var(--line);padding:16px 0}
+summary{cursor:pointer;font-weight:700;font-size:17px;list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::after{content:"+";font:700 20px var(--mono);color:var(--red)}
+details[open] summary::after{content:"–"}
+details p{margin-top:10px;color:var(--ink-soft);font-size:16px}
+footer{border-top:1px solid var(--line);padding-block:40px 56px;font-size:14px;color:var(--ink-soft)}
+footer .wrap{display:flex;gap:24px;justify-content:space-between;flex-wrap:wrap;align-items:center}
 
-  /* FOOTER */
-  footer{border-top:1px solid var(--line);padding:48px 0 32px;}
-  .footer-grid{display:flex;justify-content:space-between;flex-wrap:wrap;gap:32px;margin-bottom:32px;}
-  .footer-brand img{height:34px;margin-bottom:12px;}
-  .footer-brand p{font-size:13.5px;color:var(--ink-soft);max-width:260px;}
-  .footer-cols{display:flex;gap:64px;flex-wrap:wrap;}
-  .footer-col h4{font-size:12.5px;text-transform:uppercase;letter-spacing:0.06em;color:var(--ink-soft);margin-bottom:14px;}
-  .footer-col ul{list-style:none;margin:0;padding:0;display:grid;gap:10px;}
-  .footer-col a{text-decoration:none;font-size:14px;font-weight:600;opacity:0.85;}
-  .footer-col a:hover{opacity:1;}
-  .footer-bottom{
-    display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;
-    padding-top:24px;border-top:1px solid var(--line);font-size:12.5px;color:var(--ink-soft);
-  }
-
-  @media (max-width:900px){
-    .nav-links{display:none;}
-    .nav-toggle{display:block;}
-    .hero-grid{grid-template-columns:1fr;}
-    .phone-stage{margin-top:20px;}
-    .stats-grid{grid-template-columns:repeat(2,1fr);gap:26px;}
-    .steps{grid-template-columns:repeat(2,1fr);}
-    .feature-grid{grid-template-columns:1fr 1fr;}
-    .crew-grid{grid-template-columns:1fr;}
-    .badge-grid{grid-template-columns:repeat(3,1fr);}
-    .cta-section{margin:0 16px;padding:48px 24px;}
-  }
-  @media (max-width:560px){
-    .steps{grid-template-columns:1fr;}
-    .feature-grid{grid-template-columns:1fr;}
-    .badge-grid{grid-template-columns:repeat(2,1fr);}
-    .footer-grid{flex-direction:column;}
-    .notify-cta{justify-content:center;}
-    .fc-1,.fc-2{display:none;}
-  }
 </style>
 </head>
 <body>
 
-<header class="site-nav">
-  <div class="nav-inner">
-    <a href="#top" class="brand-mark">
-      <img src="images/logo-red.png" alt="Reed Rides">
-    </a>
-    <ul class="nav-links">
-      <li><a href="#how-it-works">How it works</a></li>
-      <li><a href="#features">Features</a></li>
-      <li><a href="#crew">Crew</a></li>
-      <li><a href="#coverage">Coverage</a></li>
-      <li><a href="#faq">FAQ</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <div class="nav-cta">
-      <a href="#download" class="btn btn-primary">Get Notified</a>
-      <button class="nav-toggle" aria-label="Menu" aria-expanded="false">&#9776;</button>
-    </div>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="images/logo-red.png" alt="Reed Rides logo">Reed Rides</a>
+    <nav aria-label="Main">
+      <a href="#ask">Ask Reed</a><a href="#screens">Screens</a><a href="#features">Features</a><a href="#crew">Crew</a><a href="#faq">FAQ</a>
+    </nav>
+    <a class="btn btn-red" href="#notify">Get notified</a>
   </div>
 </header>
 
 <main id="top">
-
-  <!-- HERO -->
-  <section class="hero">
-    <div class="wrap hero-grid">
-      <div class="hero-copy">
-        <span class="eyebrow"><span class="dot"></span> Theme park passport &amp; social tracker</span>
-        <h1>Track every ride.</h1>
-        <p class="lead">Reed Rides keeps track of every ride so you don't have to. Verified check-ins, ride stamps for every coaster, badges across six categories, and a crew that keeps score right alongside you.</p>
-
-        <form name="notify" method="POST" action="/" data-netlify="true" netlify-honeypot="bot-field" class="notify-form" data-notify-form>
+<section class="hero" style="padding:0">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">Theme park passport · now with Ask Reed</div>
+      <h1>Your rides, <em>on the record.</em> Now ask them anything.</h1>
+      <p class="lede">Reed Rides verifies every coaster you ride, stamps it into your passport, and keeps score with your crew. Ask Reed answers questions about all of it, from your own ride history to 500+ coasters across 70+ parks.</p>
+      <form name="notify" method="POST" action="/" data-netlify="true" netlify-honeypot="bot-field" class="notify" id="notify-hero" data-notify-form>
           <input type="hidden" name="form-name" value="notify">
           <p class="hp-field"><label>Leave this empty: <input name="bot-field"></label></p>
-          <input type="email" name="email" required placeholder="you@email.com" aria-label="Email address">
-          <button type="submit" class="btn btn-primary btn-large">Get notified</button>
+          <input id="email-hero" type="email" name="email" placeholder="you@email.com" aria-label="Email address" required>
+          <button class="btn btn-ink" type="submit">Get notified</button>
         </form>
         <p class="notify-error" data-notify-error>Something went wrong. Try again, or email reed@reedrides.com directly.</p>
-        <span class="notify-success" data-notify-success>&#10003; You're on the list. We'll email you at launch.</span>
-        <p class="hero-note" data-notify-note><strong>One email, sent once.</strong> iOS &amp; Android &middot; coming soon.</p>
-      </div>
-
-      <div class="phone-stage">
-        <div class="float-card fc-1">
-          <span class="fc-icon">🎢</span>
-          <span>Verified visit<span class="fc-sub">Steel Vengeance</span></span>
-        </div>
-        <div class="phone-frame">
-          <span class="real-tag">Real app screen</span>
-          <div class="phone-notch"></div>
-          <div class="phone-screen">
-            <img src="images/screen-passport.jpg" alt="The Reed Rides Passport screen showing rides unlocked, parks visited, badges earned, and collected stamps" style="width:100%;height:100%;object-fit:cover;">
-          </div>
-        </div>
-        <div class="float-card fc-2">
-          <span class="fc-icon">🏆</span>
-          <span>Badge earned<span class="fc-sub">Park Master · Cedar Point</span></span>
-        </div>
-      </div>
+        <p class="notify-success" data-notify-success>&#10003; You're on the list. We'll email you at launch.</p>
+      <p class="fine" data-notify-note>One email when it's in the App Store and Google Play. Nothing else.</p>
+      
     </div>
-  </section>
 
-  <!-- STATS -->
-  <div class="stats-bar">
-    <div class="wrap stats-grid">
-      <div><div class="num">373</div><div class="label">Coasters tracked</div></div>
-      <div><div class="num">46</div><div class="label">Parks &amp; counting</div></div>
-      <div><div class="num">6</div><div class="label">Badge categories</div></div>
-      <div><div class="num">100%</div><div class="label">Verified check-ins</div></div>
+    <div class="phone" aria-label="Ask Reed conversation in the Reed Rides app">
+      <div class="screen">
+        <div class="chat-top"><div class="av">R</div><div><b>Ask Reed</b><small>Knows your rides, your crew and 500+ coasters</small></div></div>
+        <div class="chat" id="chat">
+          <!-- Real Ask Reed session, 2026-09-26, demo account "Maya". Text verbatim; markdown bold/lists rendered. -->
+          <div class="bubble me">What's the tallest coaster I've ridden?</div>
+          <div class="bubble reed">The tallest coaster you've ridden is <b>Top Thrill 2</b> at Cedar Point 🎢
+            <ul class="blist"><li>Height: <b>420 ft</b></li><li>Top speed: 120 mph</li><li>Drop: 400 ft</li><li>Type: Strata coaster by Zamperla, opened 2024</li></ul>
+            Nothing else in your log even comes close to that one!</div>
+          <div class="bubble me">Who in my crew has ridden the most coasters?</div>
+          <div class="bubble reed">In your <b>Coaster Crew</b>, you're on top! 🏆
+            <ul class="blist"><li><b>You</b>: 9 distinct coasters (9 rides logged)</li><li><b>Jordan</b>: 6 distinct coasters (6 rides logged)</li></ul>
+            You and Jordan have both ridden 5 of the same coasters too: Raptor, Magnum XL-200, GateKeeper, Maverick, and Valravn.</div>
+        </div>
+        <div class="chips"><span>Which coasters at Cedar Point haven't I ridden yet?</span><span>Which badge am I closest to earning?</span></div>
+      </div>
     </div>
   </div>
+</section>
 
-  <!-- REAL SCREENS -->
-  <section id="screens">
-    <div class="wrap">
-      <div class="section-head">
-        <span class="eyebrow"><span class="dot"></span> Real screens</span>
-        <h2>Straight from the app. No mockups.</h2>
-        <p>Every screen below is Reed Rides today, mid-build, running on a real phone.</p>
-      </div>
-      <div class="screens-row">
-        <div class="screen-item">
-          <div class="mini-phone"><div class="mini-notch"></div><img loading="lazy" src="images/screen-crew.jpg" alt="Crew Sweep progress at Cedar Point with a shareable invite code"></div>
-          <div class="cap">Crew Sweep</div>
-          <div class="cap-sub">Check in together, track it together</div>
-        </div>
-        <div class="screen-item">
-          <div class="mini-phone"><div class="mini-notch"></div><img loading="lazy" src="images/screen-explore.jpg" alt="Explore screen listing parks grouped by operator with a search bar"></div>
-          <div class="cap">Explore</div>
-          <div class="cap-sub">Search or browse by chain</div>
-        </div>
-        <div class="screen-item">
-          <div class="mini-phone"><div class="mini-notch"></div><img loading="lazy" src="images/screen-badges.jpg" alt="Badges grid showing ride type and manufacturer progress"></div>
-          <div class="cap">Badges</div>
-          <div class="cap-sub">Progress tracked automatically</div>
-        </div>
-        <div class="screen-item">
-          <div class="mini-phone"><div class="mini-notch"></div><img loading="lazy" src="images/screen-park.jpg" alt="Cedar Point ride list with lock icons and Check In buttons"></div>
-          <div class="cap">Check in, ride by ride</div>
-          <div class="cap-sub">Locked until you've actually ridden it</div>
-        </div>
-        <div class="screen-item">
-          <div class="mini-phone"><div class="mini-notch"></div><img loading="lazy" src="images/screen-badge-detail.jpg" alt="Sky Soarer badge detail sheet showing bronze, silver, and gold thresholds"></div>
-          <div class="cap">Every badge, explained</div>
-          <div class="cap-sub">Exact thresholds, not guesswork</div>
-        </div>
-        <div class="screen-item">
-          <div class="mini-phone"><div class="mini-notch"></div><img loading="lazy" src="images/screen-profile.jpg" alt="Profile screen showing the Crew Presence privacy toggle and appearance settings"></div>
-          <div class="cap">Privacy you control</div>
-          <div class="cap-sub">Location sharing is opt-in, every time</div>
-        </div>
-      </div>
+<div class="ticker" aria-hidden="true"><div class="track">
+  <span>MILLENNIUM FORCE <i>·</i> 310 FT <i>·</i> 93 MPH <i>·</i> 4.5 G</span>
+  <span>TOP THRILL 2 <i>·</i> 420 FT <i>·</i> STRATA</span>
+  <span>STEEL VENGEANCE <i>·</i> WOOD <i>·</i> RMC</span>
+  <span>ORION <i>·</i> GIGA <i>·</i> B&amp;M</span>
+  <span>MAVERICK <i>·</i> LAUNCH <i>·</i> INTAMIN</span>
+  <span>THE BEAST <i>·</i> WOOD <i>·</i> KINGS ISLAND</span>
+  <span>MILLENNIUM FORCE <i>·</i> 310 FT <i>·</i> 93 MPH <i>·</i> 4.5 G</span>
+  <span>TOP THRILL 2 <i>·</i> 420 FT <i>·</i> STRATA</span>
+  <span>STEEL VENGEANCE <i>·</i> WOOD <i>·</i> RMC</span>
+  <span>ORION <i>·</i> GIGA <i>·</i> B&amp;M</span>
+  <span>MAVERICK <i>·</i> LAUNCH <i>·</i> INTAMIN</span>
+  <span>THE BEAST <i>·</i> WOOD <i>·</i> KINGS ISLAND</span>
+</div></div>
+
+<section id="ask" class="ask">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Ask Reed</div>
+      <h2>An assistant that has actually read your passport.</h2>
+      <p>Most AI knows coasters in general. Ask Reed knows yours: every ride you've logged, every trip, every badge you're close to, and how your crew stacks up.</p>
     </div>
-  </section>
-
-  <!-- HOW IT WORKS -->
-  <section id="how-it-works">
-    <div class="wrap">
-      <div class="section-head">
-        <span class="eyebrow"><span class="dot"></span> How it works</span>
-        <h2>From first drop to full passport</h2>
-        <p>Four steps, no spreadsheets. Reed Rides handles the tracking so you can focus on the ride.</p>
+    <div class="ask-grid">
+      <div class="qlist">
+        <div class="q"><span class="n">YOU</span><div><b>"What's the tallest coaster I've ridden?"</b><p>Answers from your own check-ins, with real stats: height, speed, drop, g-force.</p></div></div>
+        <div class="q"><span class="n">PARK</span><div><b>"Which coasters at Cedar Point haven't I ridden?"</b><p>Plan the day around what's still missing from your passport.</p></div></div>
+        <div class="q"><span class="n">TRIP</span><div><b>"What did we ride on our last trip?"</b><p>Pulls the rides from any visit, including past trips you logged later.</p></div></div>
+        <div class="q"><span class="n">BADGE</span><div><b>"Which badge am I closest to?"</b><p>Uses the same progress as your Badges tab, so the answer always matches.</p></div></div>
+        <div class="q"><span class="n">CREW</span><div><b>"Who's ahead in our crew this year?"</b><p>Compares rides and coasters across the people you actually ride with.</p></div></div>
       </div>
-      <div class="steps">
-        <div class="step-card">
-          <div class="step-num">1</div>
-          <h3>Check in for real</h3>
-          <p>Get near a ride and Reed Rides confirms you're really there, using a geofence plus a short dwell timer. It's a verified visit, not just an honor system.</p>
-        </div>
-        <div class="step-card">
-          <div class="step-num">2</div>
-          <h3>Collect your stamp</h3>
-          <p>Every coaster earns its own ride stamp in your Passport the first time you check in, so what you've ridden ends up as an actual record, not just a memory.</p>
-        </div>
-        <div class="step-card">
-          <div class="step-num">3</div>
-          <h3>Earn badges</h3>
-          <p>Track progress across ride type, manufacturer, milestones, geography, elements, and full Park Master runs.</p>
-        </div>
-        <div class="step-card">
-          <div class="step-num">4</div>
-          <h3>Ride with your crew</h3>
-          <p>See who's at the park, sweep a ride together, and compare stamps and milestones with the people you actually rode with.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FEATURES -->
-  <section id="features" style="background:var(--paper-dim);">
-    <div class="wrap">
-      <div class="section-head">
-        <span class="eyebrow"><span class="dot"></span> Features</span>
-        <h2>Everything serious credit-counting needs</h2>
-        <p>Built for people who already keep a mental list of what they've ridden.</p>
-      </div>
-      <div class="feature-grid">
-        <div class="feature-card">
-          <div class="feature-icon">📍</div>
-          <h3>Verified check-ins</h3>
-          <p>Geofence plus dwell-timer verification means a check-in actually means you were there, with a manual log as a backup if GPS isn't cooperating.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">🏅</div>
-          <h3>Badges, six ways</h3>
-          <p>Ride type, manufacturer, Park Master, milestones, geography, and elements, all tracked automatically as you ride.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">📔</div>
-          <h3>My Stamps &amp; Passport</h3>
-          <p>Every ride you've completed, across every park, in one visual collection you can look back on and keep building.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">🕰️</div>
-          <h3>Hall of Fame</h3>
-          <p>Credit for the coasters that are already gone: cited defunct-ride badges for anything you rode before it closed.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">📊</div>
-          <h3>Trip &amp; park recaps</h3>
-          <p>Save a past trip and get a recap: first-time rides, tallest coaster, total inversions, and any badge you just leveled up.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">👥</div>
-          <h3>Crews</h3>
-          <p>Belong to more than one crew (family, park friends, a one-off trip) and keep every leaderboard and recap scoped to the right group.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CREW SPOTLIGHT -->
-  <section id="crew" class="crew-section">
-    <div class="wrap crew-grid">
-      <div class="crew-copy">
-        <span class="eyebrow"><span class="dot"></span> Nobody rides alone</span>
-        <h2>The best part of a coaster trip is who you rode it with.</h2>
-        <p class="lead">Crew is where Reed Rides comes alive. See who's at the park right now, sweep a ride as a group, and watch the leaderboard move while you're still in line.</p>
-        <ul class="crew-list">
-          <li><span class="check">✓</span> <span><strong>Crew Presence:</strong> see which crew members are nearby, right now.</span></li>
-          <li><span class="check">✓</span> <span><strong>Crew Sweep:</strong> check in together and get credit as a group.</span></li>
-          <li><span class="check">✓</span> <span><strong>Milestone Ranking:</strong> Coasters Ridden or Milestones Achieved, your call.</span></li>
-          <li><span class="check">✓</span> <span><strong>Crew Recap:</strong> a summary of what your whole crew actually rode.</span></li>
+      <div class="trust">
+        <h3>Built to stay in its lane.</h3>
+        <ul>
+          <li><span><b>Reads, never writes.</b> Ask Reed can look things up. It can't check you in, undo a ride or change anything.</span></li>
+          <li><span><b>Only what you can already see.</b> It uses the same permissions as the app: your data and your crew's shared stats, nothing more.</span></li>
+          <li><span><b>Says when it doesn't know.</b> If a ride's speed or length was never published, it tells you instead of guessing.</span></li>
+          <li><span><b>13 and up.</b> Ask Reed isn't available on under-13 accounts, and younger crew members' rides are left out of crew comparisons.</span></li>
+          <li><span><b>Conversations aren't saved.</b> Close the chat and it's gone.</span></li>
         </ul>
       </div>
-      <div class="crew-visual">
-        <div class="crew-visual-header">
-          <strong>Crew Sweep: Cedar Point</strong>
-          <span class="badge-pill">4 of 6 checked in</span>
-        </div>
-        <div class="crew-row"><span class="avatar">R</span><span><span class="who">Reed</span><span class="what">Checked in · Steel Vengeance</span></span><span class="badge-pill">🎟️</span></div>
-        <div class="crew-row"><span class="avatar">J</span><span><span class="who">Jordan</span><span class="what">Checked in · Steel Vengeance</span></span><span class="badge-pill">🎟️</span></div>
-        <div class="crew-row"><span class="avatar">M</span><span><span class="who">Maya</span><span class="what">On the way</span></span></div>
-        <div class="crew-row"><span class="avatar">A</span><span><span class="who">Aaron</span><span class="what">Checked in · Steel Vengeance</span></span><span class="badge-pill">🎟️</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="screens">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Real screens</div>
+      <h2>Straight from the app. No mockups.</h2>
+      <p>Every screen here, including the Ask Reed conversation above, was captured from the live app using demo accounts with real check-ins.</p>
+    </div>
+    <div class="screens">
+      <figure><img src="images/ask-reed.jpg" alt="Ask Reed answering questions about tallest coaster and crew standings"><figcaption><b>Ask Reed</b><span>Real answers from your own ride history.</span></figcaption></figure>
+      <figure><img src="images/passport.jpg" alt="Passport screen with ride totals and 2026 in Review"><figcaption><b>Your Passport</b><span>Totals, Year in Review and every park you've visited.</span></figcaption></figure>
+      <figure><img src="images/park-rides.jpg" alt="Cedar Point ride list with wait times and check-in buttons"><figcaption><b>Check in, ride by ride</b><span>Locked until you've actually ridden it.</span></figcaption></figure>
+      <figure><img src="images/ride-mf.jpg" alt="Millennium Force ride page with live wait time and stats"><figcaption><b>Real ride stats</b><span>Wait time, height, speed, drop, g-force.</span></figcaption></figure>
+      <figure><img src="images/badges.jpg" alt="Badges and challenges screen"><figcaption><b>Badges</b><span>Progress tracked automatically as you ride.</span></figcaption></figure>
+      <figure><img src="images/crew.jpg" alt="Crew screen showing who is at the park today"><figcaption><b>Crew at the park</b><span>See who's there and who's riding right now.</span></figcaption></figure>
+      <figure><img src="images/recap.jpg" alt="Crew Recap for the last seven days"><figcaption><b>Crew Recap</b><span>Any day, week, month or season.</span></figcaption></figure>
+      <figure><img src="images/halloween.jpg" alt="HalloWeekends haunted houses at Cedar Point"><figcaption><b>Halloween events</b><span>Log haunted houses and scare zones.</span></figcaption></figure>
+      <figure><img src="images/explore.jpg" alt="Explore screen listing parks"><figcaption><b>Explore</b><span>70+ parks, searchable by name or chain.</span></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="features" style="padding-top:24px">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Everything else</div>
+      <h2>Everything serious credit-counting needs.</h2>
+      <p>Built for people who already keep a mental list of what they've ridden.</p>
+    </div>
+    <div class="feat">
+      <div class="f"><span class="tag">Check-ins</span><h3>Verified, not honor system</h3><p>A geofence plus a short dwell timer confirms you were actually on the ride. A manual log is there when GPS isn't cooperating.</p></div>
+      <div class="f"><span class="tag">Live</span><h3>Wait times at the park</h3><p>Current waits on the park page and every ride page, so you know what's worth walking to.</p><span class="stat">50+ PARKS WITH LIVE WAITS</span></div>
+      <div class="f"><span class="tag">Stats</span><h3>Numbers for every ride</h3><p>Height, speed, length, first drop, ride time and max g-force wherever they're published. Nothing is estimated.</p><span class="stat">310 FT · 93 MPH · 4.5 G</span></div>
+      <div class="f"><span class="tag">Year in Review</span><h3>Your season, summed up</h3><p>Rides, new coasters, busiest park, busiest month and your tallest new ride, for any year you've ridden.</p></div>
+      <div class="f"><span class="tag">Custom stats</span><h3>Slice your history</h3><p>Filter everything you've ridden by date range, park, manufacturer or ride type.</p></div>
+      <div class="f"><span class="tag">Seasonal</span><h3>Haunted houses count too</h3><p>Halloween events are tracked alongside rides: haunted houses, scare zones and every year you went back.</p></div>
+      <div class="f"><span class="tag">Milestones</span><h3>Certificates worth sharing</h3><p>Hit 10 rides, 100 rides or 25 parks and get a certificate with your name on it to post.</p></div>
+      <div class="f"><span class="tag">Hall of Fame</span><h3>Credit for gone coasters</h3><p>Rode Mean Streak before it closed? Retired rides are catalogued with sources, so you can still claim them.</p></div>
+      <div class="f"><span class="tag">Your way</span><h3>Dark mode and ride filters</h3><p>Night-friendly dark mode, and hide ride types you don't care about, from kiddie coasters to haunted houses.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="crew" class="crew">
+  <div class="wrap spot flip">
+    <div class="copy">
+      <div class="eyebrow">Nobody rides alone</div>
+      <h2>The best part of a coaster trip is who you rode it with.</h2>
+      <p>Crew is where Reed Rides comes alive. See who's at the park, sweep the rides as a group, and get a recap of what everyone rode.</p>
+      <ul class="checks">
+        <li><span><b>Crew Presence:</b> who's at the park today and who's riding right now.</span></li>
+        <li><span><b>Crew Sweep:</b> unlock every coaster at a park together.</span></li>
+        <li><span><b>Leaderboards:</b> coasters ridden or milestones achieved. Turn rankings off if you'd rather not compete.</span></li>
+        <li><span><b>Crew Recap:</b> today, this week, this season or all time, with a member-by-member comparison.</span></li>
+        <li><span><b>More than one crew:</b> family, park friends and a one-off trip, each with its own scores.</span></li>
+      </ul>
+    </div>
+    <div class="shot"><img src="images/recap.jpg" alt="Crew Recap: 10 coasters, 15 rides logged, tallest ride Top Thrill 2"></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Coverage</div>
+      <h2>A growing library, checked against sources.</h2>
+      <p>Cedar Point, Six Flags, Disney, Universal, SeaWorld, Busch Gardens, Silver Dollar City, UK and Nordic parks, and more.</p>
+    </div>
+    <div class="nums">
+      <div><b>500+</b><span>Coasters tracked</span></div>
+      <div><b>70+</b><span>Parks</span></div>
+      <div><b>50+</b><span>With live wait times</span></div>
+      <div><b>0</b><span>Ads</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="notify" style="padding-top:0">
+  <div class="wrap">
+    <div class="cta">
+      <img src="images/logo-red.png" alt="">
+      <div>
+        <h2>Your passport is almost ready.</h2>
+        <p>Reed Rides is heading to the App Store and Google Play. Get on the list and we'll email you the day it's live.</p>
+        <form name="notify" method="POST" action="/" data-netlify="true" netlify-honeypot="bot-field" class="notify" id="notify-cta" data-notify-form>
+          <input type="hidden" name="form-name" value="notify">
+          <p class="hp-field"><label>Leave this empty: <input name="bot-field"></label></p>
+          <input id="email-cta" type="email" name="email" placeholder="you@email.com" aria-label="Email address" required>
+          <button class="btn btn-ink" type="submit">Get notified</button>
+        </form>
+        <p class="notify-error" data-notify-error>Something went wrong. Try again, or email reed@reedrides.com directly.</p>
+        <p class="notify-success" data-notify-success>&#10003; You're on the list. We'll email you at launch.</p>
+        
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- COVERAGE -->
-  <section id="coverage">
-    <div class="wrap">
-      <div class="section-head">
-        <span class="eyebrow"><span class="dot"></span> Coverage</span>
-        <h2>Six badge categories. One growing library.</h2>
-        <p>373 coasters across 46 parks and counting: Cedar Point, Six Flags, Disney, Universal, SeaWorld, Busch Gardens, Silver Dollar City, and more.</p>
-      </div>
-      <div class="badge-grid">
-        <div class="badge-tile"><div class="b-icon">🎢</div><div class="b-name">Ride Type</div><div class="b-sub">Wood, steel, launch…</div></div>
-        <div class="badge-tile"><div class="b-icon">🏭</div><div class="b-name">Manufacturer</div><div class="b-sub">B&amp;M, Intamin, RMC…</div></div>
-        <div class="badge-tile"><div class="b-icon">👑</div><div class="b-name">Park Master</div><div class="b-sub">Every coaster, one park</div></div>
-        <div class="badge-tile"><div class="b-icon">🚩</div><div class="b-name">Milestones</div><div class="b-sub">Rookie to Globe Trotter</div></div>
-        <div class="badge-tile"><div class="b-icon">🗺️</div><div class="b-name">Geography</div><div class="b-sub">States &amp; borders</div></div>
-        <div class="badge-tile"><div class="b-icon">🌀</div><div class="b-name">Elements</div><div class="b-sub">Loops, airtime, drops</div></div>
-      </div>
+<section id="faq">
+  <div class="wrap">
+    <div class="sec-head"><div class="eyebrow">FAQ</div><h2>Good to know.</h2></div>
+    <div class="faq">
+      <details><summary>When does Reed Rides launch?</summary><p>We're finishing the iOS and Android apps now. Drop your email above and we'll send one message the day both stores approve it.</p></details>
+      <details><summary>What is Ask Reed?</summary><p>An assistant inside the app that answers questions about your rides, trips, badges and crew, plus facts about 500+ coasters. It reads your data; it can't change it.</p></details>
+      <details><summary>What counts as a "verified" ride?</summary><p>Reed Rides checks that you're within range of the ride and stayed for a short dwell window. It's not a tap from across the park. A manual log is always there if your location isn't cooperating.</p></details>
+      <details><summary>Can younger riders use it?</summary><p>Yes. Everyone gives a birthday at sign-up. Under-13 accounts need a parent or guardian to confirm before joining a crew, and Ask Reed is for 13 and up.</p></details>
+      <details><summary>Is Reed Rides free?</summary><p>Tracking, badges, stamps and Crew are free. We plan an optional paid tier later for extras. Nothing about the core passport goes behind a paywall, and there are no ads.</p></details>
+      <details><summary>Where do the wait times come from?</summary><p>Queue-Times.com, refreshed every few minutes. Parks they don't cover simply don't show a wait, rather than a guess.</p></details>
+      <details><summary>Can I add trips from before I started using the app?</summary><p>Yes. Log a Past Trip records earlier visits, with a recap and any badges those rides earn.</p></details>
+      <details><summary>Does Reed Rides track my location in the background?</summary><p>No. Location is only checked while the app is open, for check-ins and the nearby-park prompt. Never while it's closed.</p></details>
+      <details><summary>Can I delete my account and my data?</summary><p>Yes, from Settings in the app. It removes your account and everything tied to it.</p></details>
+      <details><summary>What if my home park isn't in Reed Rides yet?</summary><p>Tell us. Which park comes next is mostly driven by what people ask for.</p></details>
+      <details><summary>Do I have to join a crew?</summary><p>No. Passport, badges, stamps, Hall of Fame and Ask Reed all work solo. Crew is there if you want it.</p></details>
+      <details><summary>Who's behind Reed Rides?</summary><p>Reed (yes, of Coaster Wars on YouTube) and family, not a theme park company. If something's broken or missing, tell us. We're the ones who fix it.</p></details>
     </div>
-  </section>
-
-  <!-- DOWNLOAD CTA -->
-  <section id="download">
-    <div class="wrap">
-      <div class="cta-section">
-        <div class="cta-inner">
-          <h2>Your passport is almost ready.</h2>
-          <p>Reed Rides is heading to the App Store and Google Play. Get on the list and we'll email you the day it's live.</p>
-          <form name="notify" method="POST" action="/" data-netlify="true" netlify-honeypot="bot-field" class="notify-form" data-notify-form style="justify-content:center;max-width:480px;margin-left:auto;margin-right:auto;">
-            <input type="hidden" name="form-name" value="notify">
-            <p class="hp-field"><label>Leave this empty: <input name="bot-field"></label></p>
-            <input type="email" name="email" required placeholder="you@email.com" aria-label="Email address">
-            <button type="submit" class="btn btn-primary btn-large">Get notified</button>
-          </form>
-          <p class="notify-error" data-notify-error>Something went wrong. Try again, or email reed@reedrides.com directly.</p>
-          <span class="notify-success" data-notify-success>&#10003; You're on the list. We'll email you at launch.</span>
-          <p class="platform-note" data-notify-note style="margin-top:2px;">iOS &amp; Android &middot; coming soon</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section id="faq">
-    <div class="wrap">
-      <div class="section-head">
-        <span class="eyebrow"><span class="dot"></span> FAQ</span>
-        <h2>Good to know</h2>
-      </div>
-      <div class="faq-list">
-        <div class="faq-item">
-          <div class="faq-q"><span>When does Reed Rides launch?</span><span class="chev">+</span></div>
-          <div class="faq-a"><p>We're finishing the native iOS and Android build now. Drop your email in the Get Notified box and we'll send one message the moment both stores approve it, no need to keep checking back.</p></div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-q"><span>What counts as a "verified" ride?</span><span class="chev">+</span></div>
-          <div class="faq-a"><p>Reed Rides checks that you're within range of the ride and that you stayed for a short dwell window before it counts as a verified visit. It's not just a tap on your phone from across the park. A manual log is always there if your location isn't cooperating.</p></div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-q"><span>Is it just for coaster credit-counters?</span><span class="chev">+</span></div>
-          <div class="faq-a"><p>No. Crew is built for people who ride together, not just people chasing a number. Presence, Sweep, and Recap are all about the group, not the solo tally.</p></div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-q"><span>Can younger riders use it?</span><span class="chev">+</span></div>
-          <div class="faq-a"><p>Yes. Reed Rides has age-appropriate defaults built in. Social features like Crew open up at 13, and location sharing is scoped down for younger accounts.</p></div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-q"><span>Do I need cell service for a check-in to count?</span><span class="chev">+</span></div>
-          <div class="faq-a"><p>No, just a GPS fix. Spotty cell service at the park usually doesn't matter. If you're somewhere with no signal at all, log the ride manually and it still counts.</p></div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-q"><span>Can I add trips from before I started using the app?</span><span class="chev">+</span></div>
-          <div class="faq-a"><p>Yes. Log a Past Trip lets you record earlier visits after the fact, complete with a real recap and any badges those rides qualify you for.</p></div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-q"><span>What if my home park isn't in Reed Rides yet?</span><span class="chev">+</span></div>
-          <div class="faq-a"><p>Tell us. We're adding parks steadily, and which one comes next is mostly driven by what people actually ask for.</p></div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-q"><span>Is Reed Rides free?</span><span class="chev">+</span></div>
-          <div class="faq-a"><p>Tracking, badges, stamps, and Crew are free. We're planning an optional paid tier down the line for deeper AI features, nothing about the core passport is going behind a paywall.</p></div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-q"><span>Can I delete my account and my data?</span><span class="chev">+</span></div>
-          <div class="faq-a"><p>That's being built into Settings. Until it ships, email us and we'll take care of it directly.</p></div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-q"><span>Does Reed Rides track my location in the background?</span><span class="chev">+</span></div>
-          <div class="faq-a"><p>No. Location only gets checked when you open a ride's check-in flow, not continuously, and not while the app is closed.</p></div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-q"><span>Do I have to join a crew to use the app?</span><span class="chev">+</span></div>
-          <div class="faq-a"><p>No. Passport, badges, stamps, and Hall of Fame all work the same whether you ever join a crew or not. Crew is there if you want it.</p></div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-q"><span>Will Reed Rides work outside the US, or in other languages?</span><span class="chev">+</span></div>
-          <div class="faq-a"><p>That's on the roadmap: metric units and additional languages beyond English. If you want to see one sooner, tell us which.</p></div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-q"><span>If I undo a ride by mistake, does it mess up my badges?</span><span class="chev">+</span></div>
-          <div class="faq-a"><p>No, the opposite. Undoing a check-in updates your stats and badges immediately, so nothing stays counted after you've corrected it.</p></div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-q"><span>Who's actually behind Reed Rides?</span><span class="chev">+</span></div>
-          <div class="faq-a"><p>Reed Rides is built by Reed (yes, of Coaster Wars) and family, not a big theme park company. If something's broken or missing, tell us. We're the ones who'll actually fix it.</p></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact" style="background:var(--paper-dim);">
-    <div class="wrap">
-      <div class="section-head">
-        <span class="eyebrow"><span class="dot"></span> Contact</span>
-        <h2>Questions, bugs, or something broken?</h2>
-        <p>Email us directly and an actual person will read it. Once the app is live, there's a spot inside Reed Rides built just for feature ideas, so hang onto those until then.</p>
-      </div>
-      <div style="text-align:center;">
-        <a href="mailto:reed@reedrides.com" class="btn btn-primary" style="padding:14px 30px;font-size:16px;">Email reed@reedrides.com</a>
-      </div>
-    </div>
-  </section>
-
+  </div>
+</section>
 </main>
 
 <footer>
   <div class="wrap">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <img src="images/logo-black.png" alt="Reed Rides">
-        <p>The theme park passport for people who actually keep track, and the crew who rides with them.</p>
-      </div>
-      <div class="footer-cols">
-        <div class="footer-col">
-          <h4>Product</h4>
-          <ul>
-            <li><a href="#how-it-works">How it works</a></li>
-            <li><a href="#features">Features</a></li>
-            <li><a href="#crew">Crew</a></li>
-            <li><a href="#coverage">Coverage</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Get the app</h4>
-          <ul>
-            <li><a href="#download">iOS &amp; Android</a></li>
-            <li><a href="#faq">FAQ</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Company</h4>
-          <ul>
-            <li><a href="mailto:reed@reedrides.com">Contact us</a></li>
-            <li><a href="privacy.html">Privacy Policy</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>&copy; 2026 Reed Rides. A Reed Rides production, from Reed of Coaster Wars on YouTube.</span>
-      <span>Made for people who ride more than once.</span>
-    </div>
+    <a class="brand" href="#top"><img src="images/logo-red.png" alt="">Reed Rides</a>
+    <span><a href="mailto:reed@reedrides.com">reed@reedrides.com</a> · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · Wait times powered by <a href="https://queue-times.com">Queue-Times.com</a></span>
+    <span>© 2026 Reed Rides · from Reed of Coaster Wars</span>
   </div>
 </footer>
 
 <script>
-  document.querySelectorAll('.faq-item').forEach(function(item){
-    item.querySelector('.faq-q').addEventListener('click', function(){
-      var isOpen = item.classList.contains('open');
-      document.querySelectorAll('.faq-item.open').forEach(function(o){ if(o!==item) o.classList.remove('open'); });
-      item.classList.toggle('open', !isOpen);
-    });
-  });
-
+  // Waitlist: posts to Netlify Forms ("notify"); netlify/functions/notify-signup.js
+  // then sends the confirmation email and adds the contact in Resend.
   function encodeFormData(data){
-    return Object.keys(data).map(function(key){
-      return encodeURIComponent(key) + '=' + encodeURIComponent(data[key]);
-    }).join('&');
+    return Object.keys(data).map(function(k){ return encodeURIComponent(k)+'='+encodeURIComponent(data[k]); }).join('&');
   }
-
   document.querySelectorAll('[data-notify-form]').forEach(function(form){
     form.addEventListener('submit', function(e){
       e.preventDefault();
-      var container = form.parentElement;
-      var errorEl = container.querySelector('[data-notify-error]');
-      var successEl = container.querySelector('[data-notify-success]');
-      var noteEl = container.querySelector('[data-notify-note]');
-      var submitBtn = form.querySelector('button[type="submit"]');
-      if (errorEl) errorEl.classList.remove('show');
-      submitBtn.disabled = true;
-      var originalLabel = submitBtn.textContent;
-      submitBtn.textContent = 'Sending…';
-
-      var data = {};
-      new FormData(form).forEach(function(value, key){ data[key] = value; });
-
-      fetch('/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: encodeFormData(data)
-      }).then(function(response){
-        if (!response.ok) throw new Error('Bad response');
-        form.classList.add('hide');
-        if (successEl) successEl.classList.add('show');
-        if (noteEl) noteEl.classList.add('hide');
-      }).catch(function(){
-        if (errorEl) errorEl.classList.add('show');
-        submitBtn.disabled = false;
-        submitBtn.textContent = originalLabel;
-      });
+      var box = form.parentElement;
+      var err = box.querySelector('[data-notify-error]');
+      var ok = box.querySelector('[data-notify-success]');
+      var note = box.querySelector('[data-notify-note]');
+      var btn = form.querySelector('button[type="submit"]');
+      if (err) err.classList.remove('show');
+      btn.disabled = true; var label = btn.textContent; btn.textContent = 'Sending…';
+      var data = {}; new FormData(form).forEach(function(v,k){ data[k]=v; });
+      fetch('/', { method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body: encodeFormData(data) })
+        .then(function(r){ if(!r.ok) throw new Error('Bad response');
+          form.classList.add('hide'); if (ok) ok.classList.add('show'); if (note) note.classList.add('hide'); })
+        .catch(function(){ if (err) err.classList.add('show'); btn.disabled=false; btn.textContent=label; });
     });
   });
-
-  var navToggle = document.querySelector('.nav-toggle');
-  var navLinks = document.querySelector('.nav-links');
-  if(navToggle && navLinks){
-    navToggle.addEventListener('click', function(){
-      var open = navLinks.classList.toggle('mobile-open');
-      navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-    });
-    navLinks.querySelectorAll('a').forEach(function(a){
-      a.addEventListener('click', function(){
-        navLinks.classList.remove('mobile-open');
-        navToggle.setAttribute('aria-expanded', 'false');
-      });
-    });
-  }
 </script>
 
 </body>
