@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Terms & Conditions | Reed Rides</title>
 <meta name="description" content="Reed Rides Terms and Conditions, including SMS/text messaging program terms.">
-<meta name="theme-color" content="#BE302C">
+<meta name="theme-color" content="#E8C93E">
 <link rel="canonical" href="https://www.reedrides.com/terms.html">
 <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
 <link rel="icon" type="image/png" sizes="192x192" href="images/favicon-192.png">
@@ -13,85 +13,66 @@
 <meta name="robots" content="noindex">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --brand:#BE302C;
-    --brand-dark:#761E1B;
-    --gold:#C89B3C;
-    --gold-light:#E9CF9A;
-    --ink:#211A17;
-    --ink-soft:#6B5F58;
-    --paper:#FBF7F1;
-    --paper-dim:#F3ECE1;
-    --card:#FFFFFF;
-    --line:rgba(33,26,23,0.10);
-    --radius:18px;
-    --shadow: 0 20px 45px -22px rgba(33,26,23,0.35);
+    --sun:#E8C93E; --red:#D8342A; --red-deep:#A1241C; --gold-ink:#7A6212;
+    --ink:#1C1C1E; --ink-soft:#4B473D; --paper:#FFFFFF; --paper-2:#FBF5DD; --line:#E9E0BF;
+    --display:"Bricolage Grotesque","Arial Black",system-ui,sans-serif;
+    --body:"Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;
+    --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
   }
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{
-    margin:0;
-    background:var(--paper);
-    color:var(--ink);
-    font-family:'Inter',system-ui,-apple-system,sans-serif;
-    line-height:1.6;
-    -webkit-font-smoothing:antialiased;
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){color-scheme:dark;--ink:#F4F0E4;--ink-soft:#BDB5A0;--gold-ink:#E8C93E;--paper:#131210;--paper-2:#1C1A15;--line:#35312A;}
   }
-  h1,h2,.display{font-family:'Fraunces',Georgia,serif;font-weight:600;letter-spacing:-0.01em;margin:0;color:var(--ink);}
-  a{color:var(--brand);}
-  img{max-width:100%;display:block;}
-  .wrap{max-width:1160px;margin:0 auto;padding:0 24px;}
-  header.site-nav{position:sticky;top:0;z-index:50;background:rgba(251,247,241,0.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
-  .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;max-width:1160px;margin:0 auto;}
-  .brand-mark{display:flex;align-items:center;gap:10px;text-decoration:none;}
-  .brand-mark img{height:40px;width:auto;}
-  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:700;font-size:14.5px;text-decoration:none;padding:11px 22px;border-radius:999px;border:1px solid transparent;cursor:pointer;}
-  .btn-primary{background:var(--brand);color:#fff;}
-
-  .doc{max-width:760px;margin:0 auto;padding:64px 24px 40px;}
-  .doc .eyebrow{
-    display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;letter-spacing:0.08em;
-    text-transform:uppercase;color:var(--brand);background:rgba(190,48,44,0.08);padding:6px 14px;
-    border-radius:999px;margin-bottom:18px;
-  }
-  .doc h1{font-size:clamp(28px,4vw,40px);margin-bottom:10px;}
-  .doc .updated{color:var(--ink-soft);font-size:14px;margin-bottom:40px;}
-  .callout{
-    background:#FFF4E8;border:1px solid rgba(200,155,60,0.35);border-radius:14px;
-    padding:18px 22px;margin:0 0 40px;font-size:14.5px;color:#5c460f;
-  }
-  .callout strong{display:block;margin-bottom:6px;color:#3d2e08;}
-  .doc h2{font-size:20px;margin:40px 0 12px;}
-  .doc p, .doc li{color:var(--ink-soft);font-size:15.5px;margin:0 0 14px;}
-  .doc ul{padding-left:20px;margin:0 0 14px;}
-  .doc strong{color:var(--ink);}
-
-  footer{border-top:1px solid var(--line);padding:40px 0 32px;margin-top:20px;}
-  .footer-bottom{
-    display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;
-    font-size:12.5px;color:var(--ink-soft);
-  }
-  .footer-bottom a{color:var(--ink-soft);font-weight:600;}
-  @media (max-width:560px){ .footer-bottom{flex-direction:column;align-items:flex-start;} }
+  :root[data-theme="dark"]{color-scheme:dark;--ink:#F4F0E4;--ink-soft:#BDB5A0;--gold-ink:#E8C93E;--paper:#131210;--paper-2:#1C1A15;--line:#35312A;}
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{background:var(--paper);color:var(--ink);font-family:var(--body);line-height:1.6;-webkit-font-smoothing:antialiased}
+  h1,h2{font-family:var(--display);font-weight:800;letter-spacing:-0.02em;margin:0;color:var(--ink)}
+  a{color:var(--red)}
+  img{max-width:100%;display:block}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 20px}
+  .nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav .wrap{display:flex;align-items:center;gap:16px;height:64px}
+  .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font:800 20px/1 var(--display)}
+  .brand img{height:34px;width:auto}
+  .btn{display:inline-flex;align-items:center;justify-content:center;font:700 14px/1 var(--body);border-radius:999px;padding:11px 18px;text-decoration:none;margin-left:auto}
+  .btn-red{background:var(--red);color:#fff}
+  .band{background:var(--sun);color:#1C1C1E}
+  .band .inner{max-width:760px;margin:0 auto;padding:56px 20px 44px}
+  .eyebrow{font:700 12px/1 var(--mono);letter-spacing:.18em;text-transform:uppercase;color:#5A4708;margin-bottom:16px;display:block}
+  .band h1{font-size:clamp(30px,5vw,46px);line-height:1.05;color:#1C1C1E}
+  .band .updated{font-size:14px;color:#4B3F12;margin:14px 0 0}
+  .doc{max-width:760px;margin:0 auto;padding:40px 20px 40px}
+  .callout{background:var(--paper-2);border:1px solid var(--line);border-left:4px solid var(--sun);border-radius:14px;padding:18px 22px;margin:0 0 36px;font-size:15px;color:var(--ink-soft)}
+  .callout strong{display:block;margin-bottom:6px;color:var(--ink)}
+  .doc h2{font-size:22px;margin:40px 0 12px}
+  .doc p,.doc li{color:var(--ink-soft);font-size:16px;margin:0 0 14px}
+  .doc ul{padding-left:20px;margin:0 0 14px}
+  .doc strong{color:var(--ink)}
+  footer{border-top:1px solid var(--line);padding:32px 0;margin-top:20px}
+  .footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-size:13px;color:var(--ink-soft)}
+  .footer-bottom a{color:var(--ink-soft);font-weight:600}
+  @media (max-width:560px){.footer-bottom{flex-direction:column;align-items:flex-start}}
 </style>
 </head>
 <body>
 
-<header class="site-nav">
-  <div class="nav-inner">
-    <a href="index.html" class="brand-mark">
-      <img src="images/logo-red.png" alt="Reed Rides">
-    </a>
-    <a href="index.html#top" class="btn btn-primary">Back to Reed Rides</a>
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/"><img src="/images/logo-red.png" alt="Reed Rides logo">Reed Rides</a>
+    <a class="btn btn-red" href="/#notify">Get notified</a>
   </div>
 </header>
 
-<main class="doc">
-  <span class="eyebrow"><span class="dot"></span> Terms & Conditions</span>
+<section class="band"><div class="inner">
+  <span class="eyebrow">Terms & Conditions</span>
   <h1>Reed Rides Terms & Conditions</h1>
   <p class="updated">Last updated September 11, 2026</p>
+</div></section>
+
+<main class="doc">
 
   <div class="callout">
     <strong>Where this stands right now</strong>
@@ -126,7 +107,7 @@
 <footer>
   <div class="wrap footer-bottom">
     <span>&copy; 2026 Reed Rides.</span>
-    <a href="index.html#top">Back to Reed Rides</a>
+    <a href="/">Back to Reed Rides</a>
   </div>
 </footer>
 
