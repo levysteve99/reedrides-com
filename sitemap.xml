@@ -6,7 +6,22 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://www.reedrides.com/privacy.html</loc>
+    <loc>https://www.reedrides.com/support</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.reedrides.com/privacy</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.reedrides.com/terms</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.reedrides.com/delete-account</loc>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>

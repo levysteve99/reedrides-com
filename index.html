@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Reed Rides: Your Theme Park Passport, Now With Ask Reed</title>
-<meta name="description" content="Verified check-ins for every coaster you ride, badges, crew leaderboards, live wait times, and Ask Reed, an assistant that knows your ride history. Coming soon to iOS and Android.">
+<meta name="description" content="The theme park passport: verified coaster check-ins, seat maps for 500+ coasters, Coaster Trivia, crew leaderboards, live wait times and Ask Reed, an assistant that knows your ride history. Coming soon to iOS and Android.">
 <meta name="theme-color" content="#E8C93E">
 <link rel="canonical" href="https://www.reedrides.com/">
 <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
@@ -15,11 +15,11 @@
 <meta property="og:url" content="https://www.reedrides.com/">
 <meta property="og:site_name" content="Reed Rides">
 <meta property="og:title" content="Reed Rides: Your rides, on the record. Now ask them anything.">
-<meta property="og:description" content="The theme park passport with verified check-ins, crew leaderboards, live wait times and Ask Reed. Coming soon to iOS and Android.">
+<meta property="og:description" content="The theme park passport with verified check-ins, seat maps, Coaster Trivia, crew leaderboards, live wait times and Ask Reed. Coming soon to iOS and Android.">
 <meta property="og:image" content="https://www.reedrides.com/images/og-image.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Reed Rides: Your rides, on the record. Now ask them anything.">
-<meta name="twitter:description" content="The theme park passport with verified check-ins, crew leaderboards, live wait times and Ask Reed. Coming soon to iOS and Android.">
+<meta name="twitter:description" content="The theme park passport with verified check-ins, seat maps, Coaster Trivia, crew leaderboards, live wait times and Ask Reed. Coming soon to iOS and Android.">
 <meta name="twitter:image" content="https://www.reedrides.com/images/og-image.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -163,7 +163,7 @@ section{padding-block:88px}
 .spot{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:center}
 .spot.flip{grid-template-columns:1.2fr .8fr}
 .spot.flip .shot{order:2}
-@media (max-width:880px){.spot,.spot.flip{grid-template-columns:1fr;gap:32px}.spot.flip .shot{order:0}}
+@media (max-width:880px){.spot,.spot.flip{grid-template-columns:1fr;gap:32px}.spot .copy,.spot.flip .copy{order:1}.spot .shot,.spot.flip .shot{order:2}}
 .shot{justify-self:center;width:min(300px,100%)}
 .shot img{display:block;width:100%;border-radius:34px;border:10px solid #141312;box-shadow:var(--shadow)}
 .spot h2{font-size:clamp(32px,4vw,50px);font-weight:800;margin:12px 0 16px}
@@ -172,8 +172,19 @@ section{padding-block:88px}
 .checks li{display:grid;grid-template-columns:26px 1fr;gap:10px;font-size:16px}
 .checks li::before{content:"✓";display:grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--red);color:#fff;font-size:12px;font-weight:800;margin-top:2px}
 .checks b{font-weight:700}
-.crew{background:var(--paper-2)}
+.crew,.tint{background:var(--paper-2)}
 .attrib{font-size:13px;color:var(--ink-soft);margin-top:14px}
+.note{font-size:14px;color:var(--ink-soft);margin-top:18px;max-width:34em}
+.shot figcaption{font-size:13px;color:var(--ink-soft);text-align:center;margin-top:12px}
+.levels{display:flex;gap:8px;flex-wrap:wrap;margin-top:22px}
+.levels span{font:700 12px var(--mono);letter-spacing:.08em;text-transform:uppercase;border:2px solid var(--ink);border-radius:999px;padding:7px 12px}
+.levels span.on{background:var(--sun);border-color:var(--sun);color:#1C1C1E}
+
+/* Launch-day store links (hidden until both stores are live; see the LAUNCH DAY comment in the body) */
+.stores{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.stores[hidden]{display:none}
+.stores a{display:inline-flex;align-items:center;gap:10px;background:#1C1C1E;color:#fff;text-decoration:none;border-radius:14px;padding:10px 18px;font:700 16px/1.1 var(--body)}
+.stores a small{display:block;font:500 11px/1 var(--body);opacity:.8;margin-bottom:3px}
 
 /* numbers */
 .nums{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:2px solid var(--ink);border-radius:22px;overflow:hidden;background:var(--card)}
@@ -213,7 +224,7 @@ footer .wrap{display:flex;gap:24px;justify-content:space-between;flex-wrap:wrap;
   <div class="wrap">
     <a class="brand" href="#top"><img src="images/logo-red.png" alt="Reed Rides logo">Reed Rides</a>
     <nav aria-label="Main">
-      <a href="#ask">Ask Reed</a><a href="#screens">Screens</a><a href="#features">Features</a><a href="#crew">Crew</a><a href="#faq">FAQ</a>
+      <a href="#ask">Ask Reed</a><a href="#seats">Seats</a><a href="#lines">In line</a><a href="#trivia">Trivia</a><a href="#crew">Crew</a><a href="#faq">FAQ</a>
     </nav>
     <a class="btn btn-red" href="#notify">Get notified</a>
   </div>
@@ -225,7 +236,16 @@ footer .wrap{display:flex;gap:24px;justify-content:space-between;flex-wrap:wrap;
     <div>
       <div class="eyebrow">Theme park passport · now with Ask Reed</div>
       <h1>Your rides, <em>on the record.</em> Now ask them anything.</h1>
-      <p class="lede">Reed Rides verifies every coaster you ride, stamps it into your passport, and keeps score with your crew. Ask Reed answers questions about all of it, from your own ride history to 500+ coasters across 70+ parks.</p>
+      <p class="lede">Reed Rides checks you in at every coaster you ride, stamps it into your passport, remembers the seat you sat in and keeps score with your crew. Ask Reed answers questions about all of it, from your own ride history to 650+ coasters across 90 parks.</p>
+      <!-- LAUNCH DAY (both stores live): 1) put the real App Store and Google Play URLs in the two hrefs below and
+           remove the "hidden" attribute; 2) delete the hero form, its three message lines and the #notify CTA form
+           (or keep one form for people who want news); 3) add <meta name="apple-itunes-app" content="app-id=YOUR_APP_ID">
+           in the head; 4) change "Coming soon to iOS and Android" in the meta descriptions; 5) update the first FAQ.
+           Apple and Google both publish official badge artwork; swap these text buttons for it if you prefer. -->
+      <div class="stores" hidden>
+        <a href="#" data-store="ios"><span><small>Download on the</small>App Store</span></a>
+        <a href="#" data-store="android"><span><small>Get it on</small>Google Play</span></a>
+      </div>
       <form name="notify" method="POST" action="/" data-netlify="true" netlify-honeypot="bot-field" class="notify" id="notify-hero" data-notify-form>
           <input type="hidden" name="form-name" value="notify">
           <p class="hp-field"><label>Leave this empty: <input name="bot-field"></label></p>
@@ -234,13 +254,13 @@ footer .wrap{display:flex;gap:24px;justify-content:space-between;flex-wrap:wrap;
         </form>
         <p class="notify-error" data-notify-error>Something went wrong. Try again, or email reed@reedrides.com directly.</p>
         <p class="notify-success" data-notify-success>&#10003; You're on the list. We'll email you at launch.</p>
-      <p class="fine" data-notify-note>One email when it's in the App Store and Google Play. Nothing else.</p>
+      <p class="fine" data-notify-note>One email when it's live in both the App Store and Google Play. Nothing else.</p>
       
     </div>
 
     <div class="phone" aria-label="Ask Reed conversation in the Reed Rides app">
       <div class="screen">
-        <div class="chat-top"><div class="av">R</div><div><b>Ask Reed</b><small>Knows your rides, your crew and 500+ coasters</small></div></div>
+        <div class="chat-top"><div class="av">R</div><div><b>Ask Reed</b><small>Knows your rides, your crew and 650+ coasters</small></div></div>
         <div class="chat" id="chat">
           <!-- Real Ask Reed session, 2026-09-26, demo account "Maya". Text verbatim; markdown bold/lists rendered. -->
           <div class="bubble me">What's the tallest coaster I've ridden?</div>
@@ -261,16 +281,20 @@ footer .wrap{display:flex;gap:24px;justify-content:space-between;flex-wrap:wrap;
 <div class="ticker" aria-hidden="true"><div class="track">
   <span>MILLENNIUM FORCE <i>·</i> 310 FT <i>·</i> 93 MPH <i>·</i> 4.5 G</span>
   <span>TOP THRILL 2 <i>·</i> 420 FT <i>·</i> STRATA</span>
+  <span>RED FORCE <i>·</i> 367 FT <i>·</i> FERRARI LAND</span>
+  <span>STEEL DRAGON 2000 <i>·</i> 318 FT <i>·</i> GIGA</span>
   <span>STEEL VENGEANCE <i>·</i> WOOD <i>·</i> RMC</span>
-  <span>ORION <i>·</i> GIGA <i>·</i> B&amp;M</span>
-  <span>MAVERICK <i>·</i> LAUNCH <i>·</i> INTAMIN</span>
-  <span>THE BEAST <i>·</i> WOOD <i>·</i> KINGS ISLAND</span>
+  <span>SILVER STAR <i>·</i> HYPER <i>·</i> EUROPA-PARK</span>
+  <span>FUJIYAMA <i>·</i> 259 FT <i>·</i> FUJI-Q HIGHLAND</span>
+  <span>BARON 1898 <i>·</i> DIVE <i>·</i> EFTELING</span>
   <span>MILLENNIUM FORCE <i>·</i> 310 FT <i>·</i> 93 MPH <i>·</i> 4.5 G</span>
   <span>TOP THRILL 2 <i>·</i> 420 FT <i>·</i> STRATA</span>
+  <span>RED FORCE <i>·</i> 367 FT <i>·</i> FERRARI LAND</span>
+  <span>STEEL DRAGON 2000 <i>·</i> 318 FT <i>·</i> GIGA</span>
   <span>STEEL VENGEANCE <i>·</i> WOOD <i>·</i> RMC</span>
-  <span>ORION <i>·</i> GIGA <i>·</i> B&amp;M</span>
-  <span>MAVERICK <i>·</i> LAUNCH <i>·</i> INTAMIN</span>
-  <span>THE BEAST <i>·</i> WOOD <i>·</i> KINGS ISLAND</span>
+  <span>SILVER STAR <i>·</i> HYPER <i>·</i> EUROPA-PARK</span>
+  <span>FUJIYAMA <i>·</i> 259 FT <i>·</i> FUJI-Q HIGHLAND</span>
+  <span>BARON 1898 <i>·</i> DIVE <i>·</i> EFTELING</span>
 </div></div>
 
 <section id="ask" class="ask">
@@ -287,6 +311,7 @@ footer .wrap{display:flex;gap:24px;justify-content:space-between;flex-wrap:wrap;
         <div class="q"><span class="n">TRIP</span><div><b>"What did we ride on our last trip?"</b><p>Pulls the rides from any visit, including past trips you logged later.</p></div></div>
         <div class="q"><span class="n">BADGE</span><div><b>"Which badge am I closest to?"</b><p>Uses the same progress as your Badges tab, so the answer always matches.</p></div></div>
         <div class="q"><span class="n">CREW</span><div><b>"Who's ahead in our crew this year?"</b><p>Compares rides and coasters across the people you actually ride with.</p></div></div>
+        <div class="q"><span class="n">SEAT</span><div><b>"Where have I sat on Millennium Force?"</b><p>Knows every seat you've logged, and what other riders say about each row once enough of them have tagged it.</p></div></div>
       </div>
       <div class="trust">
         <h3>Built to stay in its lane.</h3>
@@ -296,29 +321,83 @@ footer .wrap{display:flex;gap:24px;justify-content:space-between;flex-wrap:wrap;
           <li><span><b>Says when it doesn't know.</b> If a ride's speed or length was never published, it tells you instead of guessing.</span></li>
           <li><span><b>13 and up.</b> Ask Reed isn't available on under-13 accounts, and younger crew members' rides are left out of crew comparisons.</span></li>
           <li><span><b>Conversations aren't saved.</b> Close the chat and it's gone.</span></li>
+          <li><span><b>25 questions a week, free.</b> The count resets every Monday.</span></li>
         </ul>
       </div>
     </div>
   </div>
 </section>
 
-<section id="screens">
+<section id="seats">
+  <div class="wrap spot">
+    <div class="shot"><img src="images/seat-collector.jpg" alt="Millennium Force seat map showing the seats you've ridden and how much of the train your crew has filled" loading="lazy"></div>
+    <div class="copy">
+      <div class="eyebrow">Seat Collector</div>
+      <h2>Front row, back row, every row.</h2>
+      <p>When you check in, tap the seat you sat in on a map of that ride's actual train. Reed Rides keeps every seat, ride by ride, so a second ride in a new row counts too.</p>
+      <ul class="checks">
+        <li><span><b>Seat maps for 500+ coasters,</b> built from each ride's published train layout. Rides without one fall back to a simple row picker.</span></li>
+        <li><span><b>Front Row Club, Back Row Club and Seat Master:</b> milestones for the riders who care where they sit.</span></li>
+        <li><span><b>Tag the seat:</b> Airtime, Intense, Rough or Smooth. Once enough riders tag a ride, a heatmap shows where each one lands.</span></li>
+        <li><span><b>Fill the Train:</b> see how much of the train your crew has covered between you, and who got each seat first.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="lines" class="tint">
+  <div class="wrap spot flip">
+    <div class="shot"><img src="images/after-ride.jpg" alt="After the ride: you waited about 12 minutes, less scary than you thought, and you sat next to Jordan" loading="lazy"></div>
+    <div class="copy">
+      <div class="eyebrow">In line</div>
+      <h2>The wait is part of the ride.</h2>
+      <p>Tap "I'm in line" and Reed Rides times your wait. Check in after the ride and it tells you how it went.</p>
+      <ul class="checks">
+        <li><span><b>Line timer:</b> starts when you get in line, stops when you check in, with the posted wait alongside where the park publishes one.</span></li>
+        <li><span><b>First ride? Call it first.</b> Guess how scary it'll be before you board, then say how scary it really was. Your Passport keeps score.</span></li>
+        <li><span><b>"You sat next to Jordan!"</b> Log the seat beside a crewmate and Reed Rides notices you rode side by side.</span></li>
+        <li><span><b>Trivia while you wait:</b> a quick quiz about the park you're standing in.</span></li>
+        <li><span><b>Front Row Tax:</b> how much longer the front row really takes. It appears once enough riders have timed a ride.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="trivia">
+  <div class="wrap spot">
+    <div class="shot"><img src="images/trivia.jpg" alt="Coaster Trivia question: which of these opened first, with rides from BonBon-Land, Efteling, PortAventura and Knott's Berry Farm, while the line timer runs" loading="lazy"></div>
+    <div class="copy">
+      <div class="eyebrow">Coaster Trivia</div>
+      <h2>How well do you know your coasters?</h2>
+      <p>Ten-question quizzes built from the same ride library as your passport: heights, speeds, builders, elements and where every coaster lives. Fresh questions every round.</p>
+      <div class="levels" aria-label="Levels"><span class="on">Junior</span><span>Hyper</span><span>Giga</span></div>
+      <ul class="checks">
+        <li><span><b>Three levels:</b> Junior sticks to famous coasters with answers far apart. Giga uses the full library and gets close.</span></li>
+        <li><span><b>US, International or All:</b> play the parks you know, or the ones you're planning.</span></li>
+        <li><span><b>Park quizzes:</b> "How well do you know Cedar Point?" for the 68 parks with five or more coasters.</span></li>
+        <li><span><b>Higher or Lower:</b> taller, faster or older? Keep the streak going.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="screens" class="tint">
   <div class="wrap">
     <div class="sec-head">
       <div class="eyebrow">Real screens</div>
       <h2>Straight from the app. No mockups.</h2>
-      <p>Every screen here, including the Ask Reed conversation above, was captured from the live app using demo accounts with real check-ins.</p>
+      <p>Every screen here was captured from the app using demo accounts.</p>
     </div>
     <div class="screens">
-      <figure><img src="images/ask-reed.jpg" alt="Ask Reed answering questions about tallest coaster and crew standings"><figcaption><b>Ask Reed</b><span>Real answers from your own ride history.</span></figcaption></figure>
-      <figure><img src="images/passport.jpg" alt="Passport screen with ride totals and 2026 in Review"><figcaption><b>Your Passport</b><span>Totals, Year in Review and every park you've visited.</span></figcaption></figure>
-      <figure><img src="images/park-rides.jpg" alt="Cedar Point ride list with wait times and check-in buttons"><figcaption><b>Check in, ride by ride</b><span>Locked until you've actually ridden it.</span></figcaption></figure>
-      <figure><img src="images/ride-mf.jpg" alt="Millennium Force ride page with live wait time and stats"><figcaption><b>Real ride stats</b><span>Wait time, height, speed, drop, g-force.</span></figcaption></figure>
-      <figure><img src="images/badges.jpg" alt="Badges and challenges screen"><figcaption><b>Badges</b><span>Progress tracked automatically as you ride.</span></figcaption></figure>
-      <figure><img src="images/crew.jpg" alt="Crew screen showing who is at the park today"><figcaption><b>Crew at the park</b><span>See who's there and who's riding right now.</span></figcaption></figure>
-      <figure><img src="images/recap.jpg" alt="Crew Recap for the last seven days"><figcaption><b>Crew Recap</b><span>Any day, week, month or season.</span></figcaption></figure>
-      <figure><img src="images/halloween.jpg" alt="HalloWeekends haunted houses at Cedar Point"><figcaption><b>Halloween events</b><span>Log haunted houses and scare zones.</span></figcaption></figure>
-      <figure><img src="images/explore.jpg" alt="Explore screen listing parks"><figcaption><b>Explore</b><span>70+ parks, searchable by name or chain.</span></figcaption></figure>
+      <figure><img src="images/ask-reed.jpg" alt="Ask Reed answering: your tallest ride so far is Top Thrill 2 at Cedar Point, 420 ft" loading="lazy"><figcaption><b>Ask Reed</b><span>Real answers from your own ride history.</span></figcaption></figure>
+      <figure><img src="images/passport.jpg" alt="Passport screen with ride totals, Coaster Trivia and 2026 in Review" loading="lazy"><figcaption><b>Your Passport</b><span>Totals, Year in Review and every park you've visited.</span></figcaption></figure>
+      <figure><img src="images/seat-checkin.jpg" alt="Check-in sheet with the Millennium Force seat map, Row 1 picked and tagged Airtime" loading="lazy"><figcaption><b>Pick your seat</b><span>On a map of the real train, with optional tags.</span></figcaption></figure>
+      <figure><img src="images/in-line.jpg" alt="In line for Millennium Force: posted wait, waiting for the front row, first-ride scare guess" loading="lazy"><figcaption><b>I'm in line</b><span>Time the wait. Guess the scare.</span></figcaption></figure>
+      <figure><img src="images/seatmates.jpg" alt="Passport sections: Front Row Club and Back Row Club, side by side with Jordan, and a first ride that was less scary than expected" loading="lazy"><figcaption><b>Seats and seatmates</b><span>Front row, back row and who sat beside you.</span></figcaption></figure>
+      <figure><img src="images/recap.jpg" alt="Crew Recap for the last seven days" loading="lazy"><figcaption><b>Crew Recap</b><span>From today back to all time.</span></figcaption></figure>
+      <figure><img src="images/ride-mf.jpg" alt="Millennium Force ride page with live wait time and stats" loading="lazy"><figcaption><b>Real ride stats</b><span>Wait time, height, speed, drop, g-force.</span></figcaption></figure>
+      <figure><img src="images/badges.jpg" alt="Badges and challenges screen" loading="lazy"><figcaption><b>Badges</b><span>Progress tracked automatically as you ride.</span></figcaption></figure>
+      <figure><img src="images/europa-park.jpg" alt="Europa-Park in Rust, Germany: 14 coasters, park quiz and live ride status" loading="lazy"><figcaption><b>Parks worldwide</b><span>90 parks, from Ohio to Germany to Japan.</span></figcaption></figure>
     </div>
   </div>
 </section>
@@ -331,14 +410,16 @@ footer .wrap{display:flex;gap:24px;justify-content:space-between;flex-wrap:wrap;
       <p>Built for people who already keep a mental list of what they've ridden.</p>
     </div>
     <div class="feat">
-      <div class="f"><span class="tag">Check-ins</span><h3>Verified, not honor system</h3><p>A geofence plus a short dwell timer confirms you were actually on the ride. A manual log is there when GPS isn't cooperating.</p></div>
-      <div class="f"><span class="tag">Live</span><h3>Wait times at the park</h3><p>Current waits on the park page and every ride page, so you know what's worth walking to.</p><span class="stat">50+ PARKS WITH LIVE WAITS</span></div>
+      <div class="f"><span class="tag">Check-ins</span><h3>Verified at the ride</h3><p>Check In unlocks once a geofence and a short dwell timer confirm you're at the ride. If GPS won't cooperate, you can still log it by hand.</p></div>
+      <div class="f"><span class="tag">Live</span><h3>Wait times at the park</h3><p>Current waits on the park page and every ride page, so you know what's worth walking to.</p><span class="stat">65+ PARKS WITH LIVE WAITS</span></div>
       <div class="f"><span class="tag">Stats</span><h3>Numbers for every ride</h3><p>Height, speed, length, first drop, ride time and max g-force wherever they're published. Nothing is estimated.</p><span class="stat">310 FT · 93 MPH · 4.5 G</span></div>
       <div class="f"><span class="tag">Year in Review</span><h3>Your season, summed up</h3><p>Rides, new coasters, busiest park, busiest month and your tallest new ride, for any year you've ridden.</p></div>
       <div class="f"><span class="tag">Custom stats</span><h3>Slice your history</h3><p>Filter everything you've ridden by date range, park, manufacturer or ride type.</p></div>
       <div class="f"><span class="tag">Seasonal</span><h3>Haunted houses count too</h3><p>Halloween events are tracked alongside rides: haunted houses, scare zones and every year you went back.</p></div>
       <div class="f"><span class="tag">Milestones</span><h3>Certificates worth sharing</h3><p>Hit 10 rides, 100 rides or 25 parks and get a certificate with your name on it to post.</p></div>
-      <div class="f"><span class="tag">Hall of Fame</span><h3>Credit for gone coasters</h3><p>Rode Mean Streak before it closed? Retired rides are catalogued with sources, so you can still claim them.</p></div>
+      <div class="f"><span class="tag">Hall of Fame</span><h3>Credit for gone coasters</h3><p>Rode Mean Streak before it closed? Retired rides are catalogued park by park, so you can still claim them.</p></div>
+      <div class="f"><span class="tag">Photos</span><h3>Your own ride photos</h3><p>Add photos to any ride you've ridden. They're private to you and collect in your Passport.</p></div>
+      <div class="f"><span class="tag">Notifications</span><h3>A ping when it matters</h3><p>Hear when a crewmate checks in at a park, and on iPhone, get a nudge to check in when you open the app at one. Each has its own switch.</p></div>
       <div class="f"><span class="tag">Your way</span><h3>Dark mode and ride filters</h3><p>Night-friendly dark mode, and hide ride types you don't care about, from kiddie coasters to haunted houses.</p></div>
     </div>
   </div>
@@ -349,16 +430,18 @@ footer .wrap{display:flex;gap:24px;justify-content:space-between;flex-wrap:wrap;
     <div class="copy">
       <div class="eyebrow">Nobody rides alone</div>
       <h2>The best part of a coaster trip is who you rode it with.</h2>
-      <p>Crew is where Reed Rides comes alive. See who's at the park, sweep the rides as a group, and get a recap of what everyone rode.</p>
+      <p>Crew is where Reed Rides comes alive. See who's at the park, sweep the rides as a group, fill a train together and get a recap of what everyone rode.</p>
       <ul class="checks">
-        <li><span><b>Crew Presence:</b> who's at the park today and who's riding right now.</span></li>
+        <li><span><b>Crew Presence:</b> who's at the park today and who's riding right now. It's off until you turn it on, and it never shows a map pin.</span></li>
+        <li><span><b>Crew check-in alerts:</b> a notification when a crewmate with Crew Presence on checks in at a park.</span></li>
         <li><span><b>Crew Sweep:</b> unlock every coaster at a park together.</span></li>
-        <li><span><b>Leaderboards:</b> coasters ridden or milestones achieved. Turn rankings off if you'd rather not compete.</span></li>
-        <li><span><b>Crew Recap:</b> today, this week, this season or all time, with a member-by-member comparison.</span></li>
+        <li><span><b>Seatmates and Fill the Train:</b> who you've ridden side by side with most, and how much of each train your crew has covered.</span></li>
+        <li><span><b>Leaderboards:</b> coasters ridden or milestones achieved. Rather not compete? Switch your view from rankings to shared progress.</span></li>
+        <li><span><b>Crew Recap:</b> today, yesterday, the last 7 days, this month, this year or all time, with a member-by-member comparison.</span></li>
         <li><span><b>More than one crew:</b> family, park friends and a one-off trip, each with its own scores.</span></li>
       </ul>
     </div>
-    <div class="shot"><img src="images/recap.jpg" alt="Crew Recap: 10 coasters, 15 rides logged, tallest ride Top Thrill 2"></div>
+    <div class="shot"><img src="images/crew.jpg" alt="Crew screen: 2 people from Coaster Crew at Cedar Point, 2 riding right now" loading="lazy"></div>
   </div>
 </section>
 
@@ -367,12 +450,12 @@ footer .wrap{display:flex;gap:24px;justify-content:space-between;flex-wrap:wrap;
     <div class="sec-head">
       <div class="eyebrow">Coverage</div>
       <h2>A growing library, checked against sources.</h2>
-      <p>Cedar Point, Six Flags, Disney, Universal, SeaWorld, Busch Gardens, Silver Dollar City, UK and Nordic parks, and more.</p>
+      <p>Cedar Point, Six Flags, Disney, Universal, SeaWorld, Busch Gardens and Silver Dollar City. Europa-Park, Efteling, PortAventura, Energylandia, Parc Astérix and the big UK and Nordic parks. Fuji-Q Highland, Nagashima Spa Land, Ferrari World and more.</p>
     </div>
     <div class="nums">
-      <div><b>500+</b><span>Coasters tracked</span></div>
-      <div><b>70+</b><span>Parks</span></div>
-      <div><b>50+</b><span>With live wait times</span></div>
+      <div><b>650+</b><span>Coasters tracked</span></div>
+      <div><b>90</b><span>Parks</span></div>
+      <div><b>65+</b><span>With live wait times</span></div>
       <div><b>0</b><span>Ads</span></div>
     </div>
   </div>
@@ -384,7 +467,7 @@ footer .wrap{display:flex;gap:24px;justify-content:space-between;flex-wrap:wrap;
       <img src="images/logo-red.png" alt="">
       <div>
         <h2>Your passport is almost ready.</h2>
-        <p>Reed Rides is heading to the App Store and Google Play. Get on the list and we'll email you the day it's live.</p>
+        <p>Reed Rides is heading to the App Store and Google Play. Get on the list and we'll email you once it's live in both.</p>
         <form name="notify" method="POST" action="/" data-netlify="true" netlify-honeypot="bot-field" class="notify" id="notify-cta" data-notify-form>
           <input type="hidden" name="form-name" value="notify">
           <p class="hp-field"><label>Leave this empty: <input name="bot-field"></label></p>
@@ -403,18 +486,20 @@ footer .wrap{display:flex;gap:24px;justify-content:space-between;flex-wrap:wrap;
   <div class="wrap">
     <div class="sec-head"><div class="eyebrow">FAQ</div><h2>Good to know.</h2></div>
     <div class="faq">
-      <details><summary>When does Reed Rides launch?</summary><p>We're finishing the iOS and Android apps now. Drop your email above and we'll send one message the day both stores approve it.</p></details>
-      <details><summary>What is Ask Reed?</summary><p>An assistant inside the app that answers questions about your rides, trips, badges and crew, plus facts about 500+ coasters. It reads your data; it can't change it.</p></details>
-      <details><summary>What counts as a "verified" ride?</summary><p>Reed Rides checks that you're within range of the ride and stayed for a short dwell window. It's not a tap from across the park. A manual log is always there if your location isn't cooperating.</p></details>
-      <details><summary>Can younger riders use it?</summary><p>Yes. Everyone gives a birthday at sign-up. Under-13 accounts need a parent or guardian to confirm before joining a crew, and Ask Reed is for 13 and up.</p></details>
-      <details><summary>Is Reed Rides free?</summary><p>Tracking, badges, stamps and Crew are free. We plan an optional paid tier later for extras. Nothing about the core passport goes behind a paywall, and there are no ads.</p></details>
-      <details><summary>Where do the wait times come from?</summary><p>Queue-Times.com, refreshed every few minutes. Parks they don't cover simply don't show a wait, rather than a guess.</p></details>
+      <details><summary>When does Reed Rides launch?</summary><p>We're finishing the iOS and Android apps now. Drop your email above and we'll send one message once it's live in both the App Store and Google Play.</p></details>
+      <details><summary>What is Ask Reed?</summary><p>An assistant inside the app that answers questions about your rides, seats, trips, badges and crew, plus facts about 650+ coasters. It reads your data; it can't change it. Everyone 13 and up gets 25 questions a week.</p></details>
+      <details><summary>What counts as a "verified" ride?</summary><p>Check In unlocks once you're within range of the ride and stay there for a short dwell timer. It's not a tap from across the park. If your location isn't cooperating, you can still log the ride by hand.</p></details>
+      <details><summary>Can younger riders use it?</summary><p>Yes. Everyone gives a birthday at sign-up, and it's never shown to anyone. Under-13 accounts get the passport, seats, badges, stamps and Coaster Trivia, and can join a crew after a parent or guardian confirms by email. Ask Reed is for 13 and up.</p></details>
+      <details><summary>Is Reed Rides free?</summary><p>Yes. Tracking, seats, badges, stamps, trivia, Crew and 25 Ask Reed questions a week are free, and there are no ads. We may add an optional paid tier for extras later, but the core passport stays free.</p></details>
+      <details><summary>How do I sign in?</summary><p>With a code or link we email you, Sign in with Apple on iPhone, or Google on Android. There's no password to remember.</p></details>
+      <details><summary>Where do the wait times come from?</summary><p>Queue-Times.com, refreshed every few minutes, at 65+ parks. Parks they don't cover simply don't show a wait, rather than a guess.</p></details>
       <details><summary>Can I add trips from before I started using the app?</summary><p>Yes. Log a Past Trip records earlier visits, with a recap and any badges those rides earn.</p></details>
-      <details><summary>Does Reed Rides track my location in the background?</summary><p>No. Location is only checked while the app is open, for check-ins and the nearby-park prompt. Never while it's closed.</p></details>
-      <details><summary>Can I delete my account and my data?</summary><p>Yes, from Settings in the app. It removes your account and everything tied to it.</p></details>
+      <details><summary>Does Reed Rides track my location in the background?</summary><p>No. Location is only checked while the app is open: for check-ins, distances to parks and the nearby-park prompt. The check happens on your phone, and we don't store your GPS coordinates.</p></details>
+      <details><summary>What can my crew see?</summary><p>Your ride history (which rides, when, and which seats), stats, recaps and leaderboard spots. While Crew Presence is off, your last 12 hours stay hidden. Crew Presence (which park you're at today and what you're riding) stays off until you turn it on, and it never shows a map pin. A crewmate who logs the seat right next to yours within 10 minutes will see that you rode together. Seat tags, scare ratings and line times from other riders only appear as anonymous totals.</p></details>
+      <details><summary>Can I delete my account and my data?</summary><p>Yes. In the app, go to Profile, then Delete Account. It removes your account and everything tied to it. You can also <a href="/delete-account">ask us by email</a>.</p></details>
       <details><summary>What if my home park isn't in Reed Rides yet?</summary><p>Tell us. Which park comes next is mostly driven by what people ask for.</p></details>
-      <details><summary>Do I have to join a crew?</summary><p>No. Passport, badges, stamps, Hall of Fame and Ask Reed all work solo. Crew is there if you want it.</p></details>
-      <details><summary>Who's behind Reed Rides?</summary><p>Reed (yes, of Coaster Wars on YouTube) and family, not a theme park company. If something's broken or missing, tell us. We're the ones who fix it.</p></details>
+      <details><summary>Do I have to join a crew?</summary><p>No. Passport, seats, badges, stamps, trivia, Hall of Fame and Ask Reed all work solo. Crew is there if you want it.</p></details>
+      <details><summary>Who's behind Reed Rides?</summary><p>Reed (yes, of Coaster Wars on YouTube) and family, not a theme park company. The app is published by Camps Bay Labs, LLC. If something's broken or missing, tell us. We're the ones who fix it.</p></details>
     </div>
   </div>
 </section>
@@ -423,8 +508,8 @@ footer .wrap{display:flex;gap:24px;justify-content:space-between;flex-wrap:wrap;
 <footer>
   <div class="wrap">
     <a class="brand" href="#top"><img src="images/logo-red.png" alt="">Reed Rides</a>
-    <span><a href="mailto:reed@reedrides.com">reed@reedrides.com</a> · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · Wait times powered by <a href="https://queue-times.com">Queue-Times.com</a></span>
-    <span>© 2026 Reed Rides · from Reed of Coaster Wars</span>
+    <span><a href="mailto:reed@reedrides.com">reed@reedrides.com</a> · <a href="/support">Support</a> · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · <a href="/delete-account">Delete account</a> · Wait times powered by <a href="https://queue-times.com">Queue-Times.com</a></span>
+    <span>© 2026 Camps Bay Labs, LLC · Reed Rides, from Reed of Coaster Wars</span>
   </div>
 </footer>
 

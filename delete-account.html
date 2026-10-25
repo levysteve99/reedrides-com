@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Delete Your Account | Reed Rides</title>
+<meta name="description" content="How to delete your Reed Rides account and data, in the app or by email, and what gets deleted.">
+<meta name="theme-color" content="#E8C93E">
+<link rel="canonical" href="https://www.reedrides.com/delete-account">
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="images/favicon-192.png">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --sun:#E8C93E; --red:#D8342A; --red-deep:#A1241C; --gold-ink:#7A6212;
+    --ink:#1C1C1E; --ink-soft:#4B473D; --paper:#FFFFFF; --paper-2:#FBF5DD; --line:#E9E0BF;
+    --display:"Bricolage Grotesque","Arial Black",system-ui,sans-serif;
+    --body:"Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;
+    --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){color-scheme:dark;--ink:#F4F0E4;--ink-soft:#BDB5A0;--gold-ink:#E8C93E;--paper:#131210;--paper-2:#1C1A15;--line:#35312A;}
+  }
+  :root[data-theme="dark"]{color-scheme:dark;--ink:#F4F0E4;--ink-soft:#BDB5A0;--gold-ink:#E8C93E;--paper:#131210;--paper-2:#1C1A15;--line:#35312A;}
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{background:var(--paper);color:var(--ink);font-family:var(--body);line-height:1.6;-webkit-font-smoothing:antialiased}
+  h1,h2{font-family:var(--display);font-weight:800;letter-spacing:-0.02em;margin:0;color:var(--ink)}
+  a{color:var(--red)}
+  img{max-width:100%;display:block}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 20px}
+  .nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav .wrap{display:flex;align-items:center;gap:16px;height:64px}
+  .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font:800 20px/1 var(--display)}
+  .brand img{height:34px;width:auto}
+  .btn{display:inline-flex;align-items:center;justify-content:center;font:700 14px/1 var(--body);border-radius:999px;padding:11px 18px;text-decoration:none;margin-left:auto}
+  .btn-red{background:var(--red);color:#fff}
+  .band{background:var(--sun);color:#1C1C1E}
+  .band .inner{max-width:760px;margin:0 auto;padding:56px 20px 44px}
+  .eyebrow{font:700 12px/1 var(--mono);letter-spacing:.18em;text-transform:uppercase;color:#5A4708;margin-bottom:16px;display:block}
+  .band h1{font-size:clamp(30px,5vw,46px);line-height:1.05;color:#1C1C1E}
+  .band .updated{font-size:14px;color:#4B3F12;margin:14px 0 0}
+  .doc{max-width:760px;margin:0 auto;padding:40px 20px 40px}
+  .callout{background:var(--paper-2);border:1px solid var(--line);border-left:4px solid var(--sun);border-radius:14px;padding:18px 22px;margin:0 0 36px;font-size:15px;color:var(--ink-soft)}
+  .callout strong{display:block;margin-bottom:6px;color:var(--ink)}
+  .doc h2{font-size:22px;margin:40px 0 12px}
+  .doc p,.doc li{color:var(--ink-soft);font-size:16px;margin:0 0 14px}
+  .doc ul{padding-left:20px;margin:0 0 14px}
+  .doc strong{color:var(--ink)}
+  footer{border-top:1px solid var(--line);padding:32px 0;margin-top:20px}
+  .footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-size:13px;color:var(--ink-soft)}
+  .footer-bottom a{color:var(--ink-soft);font-weight:600}
+  @media (max-width:560px){.footer-bottom{flex-direction:column;align-items:flex-start}}
+  .doc h2{line-height:1.2}
+  .doc h3{font-family:var(--display);font-size:18px;font-weight:700;margin:26px 0 8px;color:var(--ink)}
+  .doc ol{padding-left:22px;margin:0 0 14px}
+  .doc ol li{margin-bottom:8px}
+  .footer-links{display:flex;gap:14px;flex-wrap:wrap}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/"><img src="/images/logo-red.png" alt="Reed Rides logo">Reed Rides</a>
+    <a class="btn btn-red" href="/#notify">Get notified</a>
+  </div>
+</header>
+
+<section class="band"><div class="inner">
+  <span class="eyebrow">Account deletion</span>
+  <h1>Delete your Reed Rides account</h1>
+  <p class="updated">Reed Rides by Camps Bay Labs, LLC</p>
+</div></section>
+
+<main class="doc">
+
+  <p>This page explains how to delete your <strong>Reed Rides</strong> account and the data tied to it. Reed Rides is published by <strong>Camps Bay Labs, LLC</strong>.</p>
+
+  <h2 id="in-app">Delete it in the app (fastest)</h2>
+  <ol>
+    <li>Open Reed Rides and go to the <strong>Profile</strong> tab.</li>
+    <li>Scroll to the bottom and tap <strong>Delete Account</strong> (under Sign Out).</li>
+    <li>Type <strong>DELETE</strong> to confirm, then tap <strong>Permanently Delete My Account</strong>.</li>
+  </ol>
+  <p>Your account is deleted right away. If you own a crew that still has other members, the app will ask you to transfer ownership or remove them first. If you started a crew that other people still belong to and the app can't finish the deletion, email us and we'll complete it.</p>
+
+  <h2 id="by-email">Ask us to delete it (no app needed)</h2>
+  <p>If you've uninstalled the app or can't sign in, email <a href="mailto:reed@reedrides.com?subject=Delete%20my%20Reed%20Rides%20account">reed@reedrides.com</a> with the subject <strong>Delete my Reed Rides account</strong>. Send it from the email address you use to sign in, or include that address and your username. We'll reply to confirm the request came from you, then delete the account and let you know when it's done, within 30 days.</p>
+
+  <h2 id="what">What gets deleted</h2>
+  <ul>
+    <li>Your account, sign-in details, profile (username, display name, avatar) and birthday</li>
+    <li>Ride and park check-ins, past trips, seats, seat tags and "Who sat next to you?" tags</li>
+    <li>Line timer sessions, scare guesses and ratings</li>
+    <li>Photos you added, and your milestone certificate records</li>
+    <li>Badges, stamps, settings, preferred parks and trivia preferences</li>
+    <li>Your crew memberships, crew invites you sent (including the phone numbers you entered) and crew lists or trip boards you created</li>
+    <li>Push notification tokens, Ask Reed usage records and feature requests you sent</li>
+  </ul>
+
+  <h2 id="kept">What we keep</h2>
+  <p>Crews you belonged to keep running for their other members, without you in them. Anonymous totals (like seat heatmaps) are recalculated without your data. Copies in our providers' routine backups expire on their normal schedule.</p>
+  <p>A few things aren't removed automatically yet, and we delete them when you ask: milestone certificate image files, feature-request emails in our team inbox, and your address on the launch email list. Mention them in your email, or write to us after deleting in the app.</p>
+
+  <p>More detail is in our <a href="/privacy#retention">Privacy Policy</a>.</p>
+</main>
+
+<footer>
+  <div class="wrap footer-bottom">
+    <span>&copy; 2026 Camps Bay Labs, LLC.</span>
+    <span class="footer-links"><a href="/">Reed Rides</a><a href="/support">Support</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/delete-account">Delete account</a></span>
+  </div>
+</footer>
+
+</body>
+</html>

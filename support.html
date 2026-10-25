@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Support | Reed Rides</title>
+<meta name="description" content="Get help with Reed Rides: sign-in, check-ins, ride data, Crew, notifications and account deletion.">
+<meta name="theme-color" content="#E8C93E">
+<link rel="canonical" href="https://www.reedrides.com/support">
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="images/favicon-192.png">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --sun:#E8C93E; --red:#D8342A; --red-deep:#A1241C; --gold-ink:#7A6212;
+    --ink:#1C1C1E; --ink-soft:#4B473D; --paper:#FFFFFF; --paper-2:#FBF5DD; --line:#E9E0BF;
+    --display:"Bricolage Grotesque","Arial Black",system-ui,sans-serif;
+    --body:"Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;
+    --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){color-scheme:dark;--ink:#F4F0E4;--ink-soft:#BDB5A0;--gold-ink:#E8C93E;--paper:#131210;--paper-2:#1C1A15;--line:#35312A;}
+  }
+  :root[data-theme="dark"]{color-scheme:dark;--ink:#F4F0E4;--ink-soft:#BDB5A0;--gold-ink:#E8C93E;--paper:#131210;--paper-2:#1C1A15;--line:#35312A;}
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{background:var(--paper);color:var(--ink);font-family:var(--body);line-height:1.6;-webkit-font-smoothing:antialiased}
+  h1,h2{font-family:var(--display);font-weight:800;letter-spacing:-0.02em;margin:0;color:var(--ink)}
+  a{color:var(--red)}
+  img{max-width:100%;display:block}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 20px}
+  .nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav .wrap{display:flex;align-items:center;gap:16px;height:64px}
+  .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font:800 20px/1 var(--display)}
+  .brand img{height:34px;width:auto}
+  .btn{display:inline-flex;align-items:center;justify-content:center;font:700 14px/1 var(--body);border-radius:999px;padding:11px 18px;text-decoration:none;margin-left:auto}
+  .btn-red{background:var(--red);color:#fff}
+  .band{background:var(--sun);color:#1C1C1E}
+  .band .inner{max-width:760px;margin:0 auto;padding:56px 20px 44px}
+  .eyebrow{font:700 12px/1 var(--mono);letter-spacing:.18em;text-transform:uppercase;color:#5A4708;margin-bottom:16px;display:block}
+  .band h1{font-size:clamp(30px,5vw,46px);line-height:1.05;color:#1C1C1E}
+  .band .updated{font-size:14px;color:#4B3F12;margin:14px 0 0}
+  .doc{max-width:760px;margin:0 auto;padding:40px 20px 40px}
+  .callout{background:var(--paper-2);border:1px solid var(--line);border-left:4px solid var(--sun);border-radius:14px;padding:18px 22px;margin:0 0 36px;font-size:15px;color:var(--ink-soft)}
+  .callout strong{display:block;margin-bottom:6px;color:var(--ink)}
+  .doc h2{font-size:22px;margin:40px 0 12px}
+  .doc p,.doc li{color:var(--ink-soft);font-size:16px;margin:0 0 14px}
+  .doc ul{padding-left:20px;margin:0 0 14px}
+  .doc strong{color:var(--ink)}
+  footer{border-top:1px solid var(--line);padding:32px 0;margin-top:20px}
+  .footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-size:13px;color:var(--ink-soft)}
+  .footer-bottom a{color:var(--ink-soft);font-weight:600}
+  @media (max-width:560px){.footer-bottom{flex-direction:column;align-items:flex-start}}
+  .doc h2{line-height:1.2}
+  .doc h3{font-family:var(--display);font-size:18px;font-weight:700;margin:26px 0 8px;color:var(--ink)}
+  .doc ol{padding-left:22px;margin:0 0 14px}
+  .doc ol li{margin-bottom:8px}
+  .footer-links{display:flex;gap:14px;flex-wrap:wrap}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/"><img src="/images/logo-red.png" alt="Reed Rides logo">Reed Rides</a>
+    <a class="btn btn-red" href="/#notify">Get notified</a>
+  </div>
+</header>
+
+<section class="band"><div class="inner">
+  <span class="eyebrow">Support</span>
+  <h1>Help with Reed Rides</h1>
+  <p class="updated">Email reed@reedrides.com any time</p>
+</div></section>
+
+<main class="doc">
+
+  <p>Something broken, missing or wrong? Email <a href="mailto:reed@reedrides.com">reed@reedrides.com</a>. It goes straight to the people who build Reed Rides. Tell us what phone you're on and what you were trying to do, and a screenshot helps a lot.</p>
+
+  <h2>Common questions</h2>
+
+  <h3>I didn't get my sign-in email.</h3>
+  <p>Check your spam or promotions folder for a message from Reed Rides. Links only work for a short time, so request a new one if it's been a while. On iPhone you can also use Sign in with Apple, and on Android, Google.</p>
+
+  <h3>Check In won't unlock at the ride.</h3>
+  <p>Make sure Reed Rides has location permission and that you're close to the ride, then wait for the short dwell timer to finish. Ride locations are approximate at some parks. If it still won't verify, you can log the ride by hand.</p>
+
+  <h3>A ride or stat is wrong, or my park is missing.</h3>
+  <p>Tell us which ride, which park and what's wrong. We fix ride data quickly, and which park we add next is mostly driven by what people ask for. You can also send ideas from Profile &rarr; Suggest a Feature.</p>
+
+  <h3>My crew can't see me at the park.</h3>
+  <p>Crew Presence is off until you turn it on in Profile. It only shows the park you checked into today and what you're riding, never a map location.</p>
+
+  <h3>I'm not getting notifications.</h3>
+  <p>Check that notifications are allowed for Reed Rides in your phone's settings, and that the ones you want are switched on in Profile &rarr; Notifications.</p>
+
+  <h3>How do I delete my account?</h3>
+  <p>In the app, go to Profile &rarr; Delete Account. Or follow the steps on our <a href="/delete-account">account deletion page</a>.</p>
+
+  <h2>Parents and guardians</h2>
+  <p>Under-13 accounts need a parent or guardian to confirm by email before they can join a crew, and Ask Reed is only for 13 and up. To review or delete your child's information, email <a href="mailto:reed@reedrides.com">reed@reedrides.com</a>.</p>
+
+  <h2>More</h2>
+  <p><a href="/privacy">Privacy Policy</a> · <a href="/terms">Terms</a> · Reed Rides is published by Camps Bay Labs, LLC.</p>
+</main>
+
+<footer>
+  <div class="wrap footer-bottom">
+    <span>&copy; 2026 Camps Bay Labs, LLC.</span>
+    <span class="footer-links"><a href="/">Reed Rides</a><a href="/support">Support</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/delete-account">Delete account</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
