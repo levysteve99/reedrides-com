@@ -131,13 +131,15 @@ exports.handler = async (event) => {
       subject: "You're on the list",
       text:
         "Thanks for signing up for Reed Rides.\n\n" +
-        "We'll send you one email, the day the app goes live on the App Store and Google Play. " +
+        "We'll send you one email, the day the app goes live on the App Store. " +
         "That's it, nothing before then.\n\n" +
+        "On Android? It's already on Google Play: https://play.google.com/store/apps/details?id=com.reedrides.dev\n\n" +
         '- Reed',
       html:
         '<p>Thanks for signing up for Reed Rides.</p>' +
-        "<p>We'll send you one email, the day the app goes live on the App Store and Google Play. " +
+        "<p>We'll send you one email, the day the app goes live on the App Store. " +
         "That's it, nothing before then.</p>" +
+        '<p>On Android? It\'s already on <a href="https://play.google.com/store/apps/details?id=com.reedrides.dev">Google Play</a>.</p>' +
         '<p>- Reed</p>',
     }),
     resendRequest('/contacts', {
