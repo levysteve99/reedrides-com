@@ -4,8 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Reed Rides: Your Theme Park Passport, Now With Ask Reed</title>
-<meta name="description" content="The theme park passport: verified coaster check-ins, seat maps for 500+ coasters, Coaster Trivia, crew leaderboards, live wait times and Ask Reed, an assistant that knows your ride history. On Google Play now, coming soon to iPhone.">
+<meta name="description" content="The theme park passport: verified coaster check-ins, seat maps for 500+ coasters, Coaster Trivia, crew leaderboards, live wait times and Ask Reed, an assistant that knows your ride history. Free on the App Store and Google Play.">
 <meta name="theme-color" content="#E8C93E">
+<meta name="apple-itunes-app" content="app-id=6827798382">
 <link rel="canonical" href="https://reedrides.com/">
 <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
 <link rel="icon" type="image/png" sizes="192x192" href="images/favicon-192.png">
@@ -15,11 +16,11 @@
 <meta property="og:url" content="https://reedrides.com/">
 <meta property="og:site_name" content="Reed Rides">
 <meta property="og:title" content="Reed Rides: Your rides, on the record. Now ask them anything.">
-<meta property="og:description" content="The theme park passport with verified check-ins, seat maps, Coaster Trivia, crew leaderboards, live wait times and Ask Reed. On Google Play now, coming soon to iPhone.">
+<meta property="og:description" content="The theme park passport with verified check-ins, seat maps, Coaster Trivia, crew leaderboards, live wait times and Ask Reed. Free on the App Store and Google Play.">
 <meta property="og:image" content="https://reedrides.com/images/og-image.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Reed Rides: Your rides, on the record. Now ask them anything.">
-<meta name="twitter:description" content="The theme park passport with verified check-ins, seat maps, Coaster Trivia, crew leaderboards, live wait times and Ask Reed. On Google Play now, coming soon to iPhone.">
+<meta name="twitter:description" content="The theme park passport with verified check-ins, seat maps, Coaster Trivia, crew leaderboards, live wait times and Ask Reed. Free on the App Store and Google Play.">
 <meta name="twitter:image" content="https://reedrides.com/images/og-image.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -180,7 +181,7 @@ section{padding-block:88px}
 .levels span{font:700 12px var(--mono);letter-spacing:.08em;text-transform:uppercase;border:2px solid var(--ink);border-radius:999px;padding:7px 12px}
 .levels span.on{background:var(--sun);border-color:var(--sun);color:#1C1C1E}
 
-/* Store links (Google Play live since 2026-11-13; App Store button goes in at iOS launch, see the LAUNCH DAY comment in the body) */
+/* Store links (Google Play live since 2026-11-13, App Store since 2026-11-20) */
 .stores{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
 .stores[hidden]{display:none}
 .stores a{display:inline-flex;align-items:center;gap:10px;background:#1C1C1E;color:#fff;text-decoration:none;border-radius:14px;padding:10px 18px;font:700 16px/1.1 var(--body)}
@@ -226,7 +227,7 @@ footer .wrap{display:flex;gap:24px;justify-content:space-between;flex-wrap:wrap;
     <nav aria-label="Main">
       <a href="#ask">Ask Reed</a><a href="#seats">Seats</a><a href="#lines">In line</a><a href="#trivia">Trivia</a><a href="#crew">Crew</a><a href="#faq">FAQ</a>
     </nav>
-    <a class="btn btn-red" href="#notify">Get notified</a>
+    <a class="btn btn-red" href="#notify">Get the app</a>
   </div>
 </header>
 
@@ -237,26 +238,11 @@ footer .wrap{display:flex;gap:24px;justify-content:space-between;flex-wrap:wrap;
       <div class="eyebrow">Theme park passport · now with Ask Reed</div>
       <h1>Your rides, <em>on the record.</em> Now ask them anything.</h1>
       <p class="lede">Reed Rides checks you in at every coaster you ride, stamps it into your passport, remembers the seat you sat in and keeps score with your crew. Ask Reed answers questions about all of it, from your own ride history to 650+ coasters across 90 parks.</p>
-      <!-- LAUNCH DAY (iOS): Google Play went live 2026-11-13 (US only), so its button is already shown here and in #notify.
-           When the App Store version is live: 1) uncomment the App Store button below (and add one in #notify) with the
-           real URL; 2) delete the hero form, its three message lines and the #notify CTA form (or keep one form for people
-           who want news); 3) add <meta name="apple-itunes-app" content="app-id=6827798382"> in the head; 4) change
-           "On Google Play now, coming soon to iPhone" in the three meta descriptions; 5) update the first FAQ and the
-           #notify paragraph; 6) update the waitlist confirmation email in netlify/functions/notify-signup.js.
-           Apple and Google both publish official badge artwork; swap these text buttons for it if you prefer. -->
       <div class="stores">
-        <!-- <a href="APP_STORE_URL" data-store="ios"><span><small>Download on the</small>App Store</span></a> -->
+        <a href="https://apps.apple.com/app/reed-rides/id6827798382" data-store="ios"><span><small>Download on the</small>App Store</span></a>
         <a href="https://play.google.com/store/apps/details?id=com.reedrides.dev" data-store="android"><span><small>Get it on</small>Google Play</span></a>
       </div>
-      <form name="notify" method="POST" action="/" data-netlify="true" netlify-honeypot="bot-field" class="notify" id="notify-hero" data-notify-form>
-          <input type="hidden" name="form-name" value="notify">
-          <p class="hp-field"><label>Leave this empty: <input name="bot-field"></label></p>
-          <input id="email-hero" type="email" name="email" placeholder="you@email.com" aria-label="Email address" required>
-          <button class="btn btn-ink" type="submit">Get notified</button>
-        </form>
-        <p class="notify-error" data-notify-error>Something went wrong. Try again, or email reed@reedrides.com directly.</p>
-        <p class="notify-success" data-notify-success>&#10003; You're on the list. We'll email you when it's in the App Store.</p>
-      <p class="fine" data-notify-note>On iPhone? It's coming soon to the App Store. Leave your email and we'll send one message when it's live. Nothing else.</p>
+      <p class="fine">Free. iPhone in the US and Canada, Android in the US.</p>
       
     </div>
 
@@ -468,19 +454,12 @@ footer .wrap{display:flex;gap:24px;justify-content:space-between;flex-wrap:wrap;
     <div class="cta">
       <img src="images/logo-red.png" alt="">
       <div>
-        <h2>Your passport is almost ready.</h2>
-        <p>Reed Rides is on Google Play now and coming soon to the App Store. On iPhone? Get on the list and we'll email you once it's there.</p>
+        <h2>Your passport is ready.</h2>
+        <p>Reed Rides is free on the App Store for iPhone and on Google Play for Android. Start your passport on your next park day.</p>
         <div class="stores">
+          <a href="https://apps.apple.com/app/reed-rides/id6827798382" data-store="ios"><span><small>Download on the</small>App Store</span></a>
           <a href="https://play.google.com/store/apps/details?id=com.reedrides.dev" data-store="android"><span><small>Get it on</small>Google Play</span></a>
         </div>
-        <form name="notify" method="POST" action="/" data-netlify="true" netlify-honeypot="bot-field" class="notify" id="notify-cta" data-notify-form>
-          <input type="hidden" name="form-name" value="notify">
-          <p class="hp-field"><label>Leave this empty: <input name="bot-field"></label></p>
-          <input id="email-cta" type="email" name="email" placeholder="you@email.com" aria-label="Email address" required>
-          <button class="btn btn-ink" type="submit">Get notified</button>
-        </form>
-        <p class="notify-error" data-notify-error>Something went wrong. Try again, or email reed@reedrides.com directly.</p>
-        <p class="notify-success" data-notify-success>&#10003; You're on the list. We'll email you when it's in the App Store.</p>
         
       </div>
     </div>
@@ -491,7 +470,7 @@ footer .wrap{display:flex;gap:24px;justify-content:space-between;flex-wrap:wrap;
   <div class="wrap">
     <div class="sec-head"><div class="eyebrow">FAQ</div><h2>Good to know.</h2></div>
     <div class="faq">
-      <details><summary>When does Reed Rides launch?</summary><p>It's out now on <a href="https://play.google.com/store/apps/details?id=com.reedrides.dev">Google Play</a> for Android phones in the US. The iPhone version is coming soon to the App Store. Drop your email above and we'll send one message when it's live.</p></details>
+      <details><summary>Where can I get Reed Rides?</summary><p>It's free on the <a href="https://apps.apple.com/app/reed-rides/id6827798382">App Store</a> for iPhone in the US and Canada, and on <a href="https://play.google.com/store/apps/details?id=com.reedrides.dev">Google Play</a> for Android phones in the US. More countries later.</p></details>
       <details><summary>What is Ask Reed?</summary><p>An assistant inside the app that answers questions about your rides, seats, trips, badges and crew, plus facts about 650+ coasters. It reads your data; it can't change it. Everyone gets 25 questions a week.</p></details>
       <details><summary>What counts as a "verified" ride?</summary><p>Check In unlocks once you're within range of the ride and stay there for a short dwell timer. It's not a tap from across the park. If your location isn't cooperating, you can still log the ride by hand.</p></details>
       <details><summary>How old do I need to be?</summary><p>Reed Rides is for ages 13 and up. Everyone gives a birthday at sign-up, and it's never shown to anyone.</p></details>
@@ -518,30 +497,6 @@ footer .wrap{display:flex;gap:24px;justify-content:space-between;flex-wrap:wrap;
   </div>
 </footer>
 
-<script>
-  // Waitlist: posts to Netlify Forms ("notify"); netlify/functions/notify-signup.js
-  // then sends the confirmation email and adds the contact in Resend.
-  function encodeFormData(data){
-    return Object.keys(data).map(function(k){ return encodeURIComponent(k)+'='+encodeURIComponent(data[k]); }).join('&');
-  }
-  document.querySelectorAll('[data-notify-form]').forEach(function(form){
-    form.addEventListener('submit', function(e){
-      e.preventDefault();
-      var box = form.parentElement;
-      var err = box.querySelector('[data-notify-error]');
-      var ok = box.querySelector('[data-notify-success]');
-      var note = box.querySelector('[data-notify-note]');
-      var btn = form.querySelector('button[type="submit"]');
-      if (err) err.classList.remove('show');
-      btn.disabled = true; var label = btn.textContent; btn.textContent = 'Sending…';
-      var data = {}; new FormData(form).forEach(function(v,k){ data[k]=v; });
-      fetch('/', { method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body: encodeFormData(data) })
-        .then(function(r){ if(!r.ok) throw new Error('Bad response');
-          form.classList.add('hide'); if (ok) ok.classList.add('show'); if (note) note.classList.add('hide'); })
-        .catch(function(){ if (err) err.classList.add('show'); btn.disabled=false; btn.textContent=label; });
-    });
-  });
-</script>
 
 </body>
 </html>

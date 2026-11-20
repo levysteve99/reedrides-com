@@ -4,6 +4,8 @@
 //
 // It (1) sends the signer a confirmation email and (2) adds them as a
 // contact in Resend so the full list can get one broadcast on launch day.
+// Since 2026-11-20 (iOS launch) the site has no waitlist form, so this only
+// fires if an old cached page posts; the email then just gives both store links.
 //
 // Requires two env vars, set in Netlify (Site configuration -> Environment
 // variables), never committed here:
@@ -128,18 +130,18 @@ exports.handler = async (event) => {
       from: FROM_EMAIL,
       to: email,
       reply_to: 'reed@reedrides.com',
-      subject: "You're on the list",
+      subject: 'Reed Rides is out now',
       text:
-        "Thanks for signing up for Reed Rides.\n\n" +
-        "We'll send you one email, the day the app goes live on the App Store. " +
-        "That's it, nothing before then.\n\n" +
-        "On Android? It's already on Google Play: https://play.google.com/store/apps/details?id=com.reedrides.dev\n\n" +
+        "Thanks for signing up for Reed Rides. It's out now, and it's free.\n\n" +
+        'iPhone (US and Canada): https://apps.apple.com/app/reed-rides/id6827798382\n' +
+        'Android (US): https://play.google.com/store/apps/details?id=com.reedrides.dev\n\n' +
+        "That's the only email you'll get from this list.\n\n" +
         '- Reed',
       html:
-        '<p>Thanks for signing up for Reed Rides.</p>' +
-        "<p>We'll send you one email, the day the app goes live on the App Store. " +
-        "That's it, nothing before then.</p>" +
-        '<p>On Android? It\'s already on <a href="https://play.google.com/store/apps/details?id=com.reedrides.dev">Google Play</a>.</p>' +
+        "<p>Thanks for signing up for Reed Rides. It's out now, and it's free.</p>" +
+        '<p>iPhone (US and Canada): <a href="https://apps.apple.com/app/reed-rides/id6827798382">App Store</a><br>' +
+        'Android (US): <a href="https://play.google.com/store/apps/details?id=com.reedrides.dev">Google Play</a></p>' +
+        "<p>That's the only email you'll get from this list.</p>" +
         '<p>- Reed</p>',
     }),
     resendRequest('/contacts', {
